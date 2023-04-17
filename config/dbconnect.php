@@ -1,6 +1,6 @@
 <?php
 
-$server = "localhost:8111";
+$server = "127.0.0.1:3307";
 $user = "root";
 $password = "";
 $db = "php-project";
