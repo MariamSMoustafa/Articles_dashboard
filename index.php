@@ -15,15 +15,15 @@
 <body >
      <?php
 if(isset($_GET["group"])){
-    require_once("adminView/Groups/GroupsView.php");
+    require_once("views/Groups/GroupsView.php");
  
 }
 elseif(isset($_GET["user"])){
-    require_once("adminView/Users/UsersView.php");
+    require_once("views/Users/UsersView.php");
    
 }
 elseif(isset($_GET["article"])){
-    require_once("adminView/Articles/ArticlesView.php");
+    require_once("views/Articles/ArticlesView.php");
 
 }
 ?> 
