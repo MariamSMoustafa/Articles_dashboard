@@ -16,7 +16,7 @@
 
         echo "<table align=center border=1px style=width:600px; line-height:40px;>";
         echo "<tr> 
-        <th colspan=6><h2>Groups Record</h2></th> 
+        <th colspan=6><h2>Users</h2></th> 
         </tr><tr>";
 
         foreach($result[0] as $key=>$val){
