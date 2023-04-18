@@ -1,14 +1,9 @@
 <?php
 
-$server = "127.0.0.1:3307";
-$user = "root";
-$password = "";
-$db = "php-project";
-
-$conn = mysqli_connect($server,$user,$password,$db);
-
-if(!$conn) {
-    die("Connection Failed:".mysqli_connect_error());
-}
-
+define("__HOST__","127.0.0.1:3307");
+define("__USER__","root");
+define("__PASS__","");
+define("__DB__","php-project");
+define("__RECORDS_PER_PAGE__",5);
+define("__Debug__Mode__",0);
 ?>
