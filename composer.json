@@ -1,0 +1,10 @@
+{
+    "require":{
+
+    },
+    "autoload":{
+        "classmap":["Database"],
+        "files":["./config/dbconnect.php"]
+    }
+
+}
