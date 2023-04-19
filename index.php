@@ -2,7 +2,7 @@
 <?php
             include "./adminHeader.php";
             include "./sidebar.php";
-           
+            require_once("vendor/autoload.php");
             
         ?>
             <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,17 +17,18 @@
 <body >
      <?php
 if(isset($_GET["group"])){
-    require_once("views/Groups/GroupsView.php");
+    if (isset($_GET["id"]) && is_numeric($_GET["id"])) {
+    if($_GET["id"]){
+        
+        require_once("views/Groups/editGroup.php");
+    }
+   
+    }else{
+        require_once("views/Groups/GroupsView.php");
+    }
  
 }
-elseif(isset($_GET["user"])){
-    require_once("adminView/UsersView.php");
-   
-}
-elseif(isset($_GET["article"])){
-    require_once("adminView/ArticlesView.php");
 
-}
 ?> 
     
 
