@@ -1,5 +1,5 @@
 
-<?php
+<?php  require_once("./vendor/autoload.php");
             include "./adminHeader.php";
             include "./sidebar.php";
                    ?>
@@ -15,13 +15,16 @@
 <body >
      <?php
 if(isset($_GET["group"])){
+   if(!empty($_GET["group"])){
+   
+            require_once("views/Groups/editGroup.php");
+        }
+        else{
+            require_once("views/Groups/GroupsView.php"); 
+        }
+    }
     
-    
-            require_once("views/Groups/GroupsView.php");
-        
 
- 
-}
 elseif(isset($_GET["user"])){
     require_once("views/Users/UsersView.php");
    

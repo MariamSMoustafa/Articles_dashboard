@@ -7,6 +7,7 @@ $handler = new MySQLHandler("groups");
 $result = $handler->get_data(["id","name","icon","description"]);
 
 
+
 if (!$handler->connect())
 
   {
@@ -54,8 +55,10 @@ foreach($result as $row)
   echo "<td>" . $row['description'] . "</td>";
 
   echo   "<td>
-  <a href=./views/Groups/editGroup.php?groupId=". $row['id']."> Edit </a>
-  <a href='#'> Delete </a>
+  <a href='" . $_SERVER["PHP_SELF"] . "?group=" . $row["id"] . "'> Edit </a>
+  <form method='post' action='' enctype='multipart/form-data'>
+  <a  href=" . $_SERVER["PHP_SELF"] ."?id=" . $row["id"] . " name='delete'> Delete </a>
+  </form>
   </td> ";
     
   echo "</tr>";
@@ -63,7 +66,7 @@ foreach($result as $row)
   }
 
 echo "</table>";
-
+$handler->connect();
 
 
 
