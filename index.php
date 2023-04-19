@@ -17,7 +17,7 @@
 <body >
      <?php
 if(isset($_GET["group"])){
-    require_once("adminView/GroupsView.php");
+    require_once("views/Groups/GroupsView.php");
  
 }
 elseif(isset($_GET["user"])){
