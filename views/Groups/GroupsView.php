@@ -54,7 +54,7 @@ foreach($result as $row)
   echo "<td>" . $row['description'] . "</td>";
 
   echo   "<td>
-  <a href='" . $_SERVER["PHP_SELF"] . "?group?id=" . $row["id"] . "'> Edit </a>
+  <a href=./views/Groups/editGroup.php?groupId=". $row['id']."> Edit </a>
   <a href='#'> Delete </a>
   </td> ";
     
