@@ -28,7 +28,7 @@ class MySQLHandler implements DbHandler {
    
     public function connect(){
         try{
-        $handler = mysqli_connect(__HOST__,__USER__,__PASS__,__DB__,8111);
+        $handler = mysqli_connect("localhost","root","","php-project",8111);
         if($handler){
             $this->_db_handler = $handler;
             return true;
@@ -148,10 +148,10 @@ class MySQLHandler implements DbHandler {
         }
     }
     public function filter($column,$search){
-        $filter=new containFilter($column,$search);
-        $where=$filter->get_sql();
-        $table=$this->_table;
-        return this->get_results("select * from `$table` where $where");
+        //$filter=new containFilter($column,$search);
+        //$where=$filter->get_sql();
+        //$table=$this->_table;
+        //return this->get_results("select * from `$table` where $where");
     }
     public function delete($id) {
         $table = $this->_table;
