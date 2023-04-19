@@ -23,7 +23,7 @@ elseif(isset($_GET["user"])){
    
 }
 elseif(isset($_GET["article"])){
-    require_once("views/Articles/ArticlesView.php");
+    require_once("views/Articles/index.php");
 
 }
 ?> 
