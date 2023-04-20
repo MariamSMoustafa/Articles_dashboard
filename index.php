@@ -26,6 +26,9 @@ elseif(isset($_GET["user"])&&!isset($_GET["delete"])){
     else if(($_GET["user"])=='delete'){
         require_once("views/Users/UsersDelete.php");
     }
+    else if(($_GET["user"])=='add'){
+        require_once("views/Users/UsersCreate.php");
+    }
     else{
         require_once("views/Users/UsersView.php"); 
     }
