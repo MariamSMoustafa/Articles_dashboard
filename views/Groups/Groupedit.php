@@ -5,10 +5,11 @@ $handler = new MySQLHandler("groups");
  $id=intval($_GET['group']);
  $res=$handler->get_record_by_id($id);
  if(isset($_POST['submit'])){
+ 
   $newdata=array("name"=>$_POST['name'] , "icon"=>$_POST['icon'] ,"description"=>$_POST['desc']);
   $handler->connect();
   $handler->update($newdata,$id);
-  echo "<div class='msg-info'>Record updated</div>";
+  header("Location: http://localhost/Articles_dashboard/index.php?group");
  }
 
 

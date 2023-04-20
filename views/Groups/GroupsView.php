@@ -3,10 +3,7 @@
 <?php
 require_once("vendor/autoload.php");
 $handler = new MySQLHandler("groups");
-
 $result = $handler->get_data(["id","name","icon","description"]);
-
-
 
 if (!$handler->connect())
 
@@ -56,9 +53,9 @@ foreach($result as $row)
 
   echo   "<td>
   <a href='" . $_SERVER["PHP_SELF"] . "?group=" . $row["id"] . "'> Edit </a>
-  <form method='post' action='' enctype='multipart/form-data'>
-  <a  href=" . $_SERVER["PHP_SELF"] ."?id=" . $row["id"] . " name='delete'> Delete </a>
-  </form>
+  
+  <a  href=" . $_SERVER["PHP_SELF"] ."?group=delete&" ."id=" . $row["id"] ." name='delete' type='submit'> Delete </a>
+  
   </td> ";
     
   echo "</tr>";

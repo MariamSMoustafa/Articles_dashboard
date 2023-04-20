@@ -14,10 +14,13 @@
 </head>
 <body >
      <?php
-if(isset($_GET["group"])){
-   if(!empty($_GET["group"])){
+if(isset($_GET["group"])&&!isset($_GET["delete"])){
+   if($_GET["group"]==intval($_GET["group"])){
    
-            require_once("views/Groups/editGroup.php");
+            require_once("views/Groups/Groupedit.php");
+        }
+        elseif(($_GET["group"])=='delete'){
+            require_once("views/Groups/Groupdelete.php"); 
         }
         else{
             require_once("views/Groups/GroupsView.php"); 
