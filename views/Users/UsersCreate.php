@@ -1,7 +1,7 @@
 <center>
 <?php
             include "../../adminHeader.php";
-            include "../Main/sidebar.php";
+            include "../../sidebar.php";
             include "../../Database/MySQLHandler.php";
             $handler = new MySQLHandler("users");
 

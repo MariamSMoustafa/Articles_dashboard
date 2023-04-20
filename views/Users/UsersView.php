@@ -1,13 +1,13 @@
     <center>
     <?php
     require_once("vendor/autoload.php");
+
     $handler = new MySQLHandler("users");
 
     $result = $handler->get_data(["id","name","email","number","group_id"]);
 
 
     if (!$handler->connect())
-
     {
 
          die('Could not connect: ');
@@ -40,13 +40,14 @@
 
         echo "<td>" . $row['group_id'] . "</td>";
 
+
         echo  
          "<td>
-         <a href='". $_SERVER["PHP_SELF"]. "?id=". $row["id"]. "'> Edit </a>
-         <a href='". $_SERVER["PHP_SELF"]. "?id=". $row["id"]. "'> Delete </a>
-         </td> ";
+         <a href='". $_SERVER["PHP_SELF"]. "?user=". $row["id"]. "'> Edit </a>
 
+         <a  href=" . $_SERVER["PHP_SELF"] ."?group=delete&" ."id=" . $row["id"] ." name='delete' type='submit'> Delete </a>  
         
+         </td> ";
 
         echo "</tr>";
 
