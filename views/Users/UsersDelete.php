@@ -11,6 +11,8 @@
    header("Location: http://localhost/php-project/index.php?user");
   }
  
+ 
+  
                     ?>
             
  <div class="container p-5 w-25 card" style="color:white">

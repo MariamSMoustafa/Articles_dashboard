@@ -1,4 +1,4 @@
-    <center>
+<center>
     <?php
     require_once("vendor/autoload.php");
 
@@ -43,9 +43,8 @@
 
         echo  
          "<td>
-         <a   href='". $_SERVER["PHP_SELF"]. "?user=". $row["id"]." class='btn btn-danger' > Edit </a><br>
-
-         <a  href=" . $_SERVER["PHP_SELF"] ."?user=delete&" ."id="  ." name='delete' type='submit'
+         <a   href='". $_SERVER["PHP_SELF"]. "?user=". $row["id"]." '> Edit </a><br>
+         <a  href=" . $_SERVER["PHP_SELF"] ."?user=delete&" ."id=".  $row["id"]  ." name='delete' type='submit'
          
          > Delete </a>  
         
