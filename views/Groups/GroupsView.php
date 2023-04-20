@@ -3,9 +3,7 @@
 <?php
 require_once("vendor/autoload.php");
 $handler = new MySQLHandler("groups");
-
 $result = $handler->get_data(["id","name","icon","description"]);
-
 
 if (!$handler->connect())
 
@@ -54,8 +52,10 @@ foreach($result as $row)
   echo "<td>" . $row['description'] . "</td>";
 
   echo   "<td>
-  <a href='#'> Edit </a>
-  <a href='#'> Delete </a>
+  <a href='" . $_SERVER["PHP_SELF"] . "?group=" . $row["id"] . "'> Edit </a>
+  
+  <a  href=" . $_SERVER["PHP_SELF"] ."?group=delete&" ."id=" . $row["id"] ." name='delete' type='submit'> Delete </a>
+  
   </td> ";
     
   echo "</tr>";
@@ -63,7 +63,7 @@ foreach($result as $row)
   }
 
 echo "</table>";
-
+$handler->connect();
 
 
 
@@ -116,3 +116,47 @@ echo "</table>";
 
   
 </center>
+
+
+<!-- echo   "<td>
+  
+  <button type=button class= btn btn-primary btn-sm p-1 mr-2  data-toggle=modal data-target=#myeditModal>
+    Edit
+  </button>
+
+ 
+  <div class=modal fade id=myeditModal role=dialog>
+    <div class=modal-dialog>
+    
+      <div class=modal-content>
+        <div class=modal-header>
+          <h4 class=modal-title>Edit Group</h4>
+          <button type=button class=close data-dismiss=modal>&times;</button>
+        </div>
+        <div class=modal-body>
+          <form  enctype='multipart/form-data' onsubmit=addItems() method=POST>
+            <div class=form-group>
+              <label for=name>Group Name:</label>
+              <input type=text class=form-control id=p_name required>
+            </div>
+            <div class=form-group>
+              <label for=price>Icone:</label>
+              <input type=number class=form-control id=p_price required>
+            </div>
+            <div class=form-group>
+              <label for=qty>Description:</label>
+              <input type=text class=form-control id=p_desc required>
+            </div>
+            <div class=form-group>
+              <button type=submit class=btn btn-secondary id=upload style=height:40px>Edit group</button>
+            </div>
+          </form>
+
+        </div>
+        <div class=modal-footer>
+          <button type=button class=btn btn-default data-dismiss=modal style=height:40px>Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> -->
