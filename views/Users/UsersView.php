@@ -45,7 +45,7 @@
          "<td>
          <a href='". $_SERVER["PHP_SELF"]. "?user=". $row["id"]. "'> Edit </a>
 
-         <a  href=" . $_SERVER["PHP_SELF"] ."?group=delete&" ."id=" . $row["id"] ." name='delete' type='submit'> Delete </a>  
+         <a  href=" . $_SERVER["PHP_SELF"] ."?user=delete&" ."id=" . $row["id"] ." name='delete' type='submit'> Delete </a>  
         
          </td> ";
 

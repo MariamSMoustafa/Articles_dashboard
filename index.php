@@ -18,6 +18,7 @@
 if(isset($_GET["group"])){
     require_once("views/Groups/GroupsView.php");
 }
+
 elseif(isset($_GET["user"])&&!isset($_GET["delete"])){
     if($_GET["user"]==intval($_GET["user"])) {
         require_once("views/Users/UsersEdit.php");
