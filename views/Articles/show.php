@@ -1,7 +1,15 @@
-<?php
-            include "../../adminHeader.php";
-            include "../Main/sidebar.php";
-                   ?>
+<?php 
+ 
+ $handler = new MySQLHandler("articles");
+ $id=intval($_GET['articles']);
+ $res=$handler->get_record_by_id($id);
+//  if(isset($_POST['update'])){
+//     $newdata=array("id"=>null,"title"=>$_POST['title'] , "summery"=>$_POST['summery'] ,"user_id"=>1,"full-article"=>$_POST['full-article']);
+//       $handler->connect();
+//   $handler->update($newdata,$id);
+// //   echo "<div class='msg-info'>Record updated</div>";
+//  }
+ ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,25 +22,25 @@
 <body >
 <div class="container ">
       <div class="d-inline-flex ">
-<div class="card m-3 bg-light ">
-  <div class="card-header">
+<div class="card m-3 text-white ">
+  <div class="card-header ">
     Article Info
   </div>
   <div class="card-body ">
     <h5 class="card-title">Title:</h5>
-    <p class="card-text"></p>
+    <p class="card-text"><?=$res[0]['title']?></p>
 
     <h5 class="card-title">image:</h5>
     <img src="" alt="">
 
     <h5 class="card-title">Summary:</h5>
-    <p class="card-text"></p>
+    <p class="card-text"><?=$res[0]['summery']?></p>
 
     <h5 class="card-title">Full Article:</h5>
-    <p class="card-text"></p>
+    <p class="card-text"><?=$res[0]['full-article']?></p>
 
     <h5 class="card-title">Publishing Date:</h5>
-    <p class="card-text"></p>
+    <p class="card-text"><?=$res[0]['publishing-date']?></p>
    
    <p class=" text-danger card-text"><span class="fw-bold"></h5>  </div>
 </div>

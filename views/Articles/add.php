@@ -1,7 +1,19 @@
 <?php
             include "../../adminHeader.php";
-            include "../Main/sidebar.php";
-                   ?>
+            include "../views/Main/sidebar.php";
+            include "../../Database/MySQLHandler.php";
+            // require("../../vendor/autoload.php");
+            $handler = new MySQLHandler("articles");
+
+            // $id=intval($_GET['group']);
+            // $res=$handler->get_record_by_id($id);
+            if(isset($_POST['submit'])){
+             $newdata=array("id"=>null,"title"=>$_POST['title'] , "summery"=>$_POST['summery'] ,"user_id"=>1,"full-article"=>$_POST['full-article']);
+             $handler->connect();
+             $handler->save($newdata);
+            //  echo "<div class='msg-info'>Record created Sucessfully</div>";
+            }
+                 ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,30 +24,35 @@
   <title>Admin</title>
 </head>
 <body >
-    <form method="POST" action="" enctype="multipart/form-data">
+    <form method="POST" action="index.php" enctype="multipart/form-data">
     
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title</label>
             <input name="title" type="text" class="form-control" id="exampleFormControlInput1">
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-            <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="exampleFormControlInput1" class="form-label">Summery</label>
+            <textarea name="summery" type="text" class="form-control" id="exampleFormControlInput1"></textarea>
         </div>
-
+       
         <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Full Article</label>
+            <textarea name="full-article" type="text" class="form-control" id="exampleFormControlInput1"></textarea>
+        </div>
+     
+        <!-- <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Post Creator</label>
             <select name="post_creator" class="form-control">
              
                     <option value=""></option>
              
             </select>
-        </div>
+        </div> -->
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Image</label>
             <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" >
         </div>
-        <button class="btn btn-success">Submit</button>
+        <button name="submit" class="btn btn-success">Submit</button>
     </form>
 
     <script type="text/javascript" src="../../assets/js/script.js"></script>
