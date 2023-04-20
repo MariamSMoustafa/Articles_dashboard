@@ -45,7 +45,9 @@
         echo  
          "<td>
          <a href='". $_SERVER["PHP_SELF"]. "?article=". $row["id"]. "'> Edit </a>
-         <a  href=" . $_SERVER["PHP_SELF"] ."?group=delete&" ."id=" . $row["id"] ." name='delete' type='submit'> Delete </a>
+         <a  href=" . $_SERVER["PHP_SELF"] ."?article=delete&" ."id=".  $row["id"]  ." name='delete' type='submit'
+         
+         > Delete </a>
          </td> ";
 
         
@@ -58,11 +60,7 @@
     ?>
 
     <?php
-        echo '<a href="views\Articles\add.php">
-        <button type="button" class="btn btn-secondary " style="height:40px" data-toggle="modal" data-target="#myModal">
-           Add User
-        </button>
-        </a>';
+        echo "<a  href=" . $_SERVER["PHP_SELF"] ."?article=add&" ."id=" . $row["id"] ." name='add' type='button' class='btn btn-secondary'>Add Article</a>";
     ?>
    
     

@@ -1,4 +1,3 @@
-
 <?php 
             require_once("vendor/autoload.php");
             include "./adminHeader.php";
@@ -42,33 +41,22 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
             require_once("views/Users/UsersView.php"); 
         }
     }
-elseif(isset($_GET["user"])){
-    require_once("views/Users/UsersView.php");
-   
-}
-elseif(isset($_GET["article"])&&!isset($_GET["delete"])){
-    if($_GET["article"]==intval($_GET["article"])){
-    
-             require_once("views/Articles/edit.php");
-         }
-         elseif(($_GET["article"])=='delete'){
-             require_once("views/Articles/delete.php"); 
-         }
-           else if(($_GET["article"])=='add'){
-            require_once("views/Articles/add.php");
-        }
-         else{
-             require_once("views/Articles/articlesview.php"); 
-         }
-     }
-    // else{
-    //     require_once("views/Articles/articlesview.php"); 
-    // }
 
-
-elseif(isset($_GET["article"])){
-    require_once("views/Articles/index.php");
-
+    elseif(isset($_GET["article"])&&!isset($_GET["delete"])){
+        if($_GET["article"]==intval($_GET["article"])){
+        
+                 require_once("views/Articles/ArticlesEdit.php");
+             }
+             elseif(($_GET["article"])=='delete'){
+                 require_once("views/Articles/ArticlesDelete.php"); 
+             }
+               else if(($_GET["article"])=='add'){
+                require_once("views/Articles/ArticlesCreate.php");
+            }
+             else{
+                 require_once("views/Articles/ArticlesView.php"); 
+             }
+         }
 ?> 
   
    
