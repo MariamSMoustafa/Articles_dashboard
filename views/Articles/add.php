@@ -1,17 +1,13 @@
 <?php
-            include "../../adminHeader.php";
-            include "../views/Main/sidebar.php";
+           
             include "../../Database/MySQLHandler.php";
-            // require("../../vendor/autoload.php");
             $handler = new MySQLHandler("articles");
 
-            // $id=intval($_GET['group']);
-            // $res=$handler->get_record_by_id($id);
             if(isset($_POST['submit'])){
              $newdata=array("id"=>null,"title"=>$_POST['title'] , "summery"=>$_POST['summery'] ,"user_id"=>1,"full-article"=>$_POST['full-article']);
              $handler->connect();
              $handler->save($newdata);
-            //  echo "<div class='msg-info'>Record created Sucessfully</div>";
+             header("Location: http://localhost/Articles_dashboard/articlesview");
             }
                  ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +20,7 @@
   <title>Admin</title>
 </head>
 <body >
-    <form method="POST" action="index.php" enctype="multipart/form-data">
+    <form method="POST" action="" enctype="multipart/form-data">
     
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title</label>

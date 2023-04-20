@@ -45,7 +45,7 @@
         echo  
          "<td>
          <a href='". $_SERVER["PHP_SELF"]. "?article=". $row["id"]. "'> Edit </a>
-         <a > Delete </a>
+         <a  href=" . $_SERVER["PHP_SELF"] ."?group=delete&" ."id=" . $row["id"] ." name='delete' type='submit'> Delete </a>
          </td> ";
 
         
