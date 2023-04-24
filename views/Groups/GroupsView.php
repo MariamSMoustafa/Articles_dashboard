@@ -17,13 +17,6 @@ if (!$handler->connect())
 
   }
 
- 
-
-
-
- 
-
-
 
 echo "<table align=center border=1px style=width:600px; line-height:40px;>";
 echo "<tr> 
