@@ -1,5 +1,9 @@
 <center>
     
+<!-- <form class="m-3" action="search.php?query" method="GET">
+	<input type="text" name="query" />
+	<input class="p-1" type="submit" value="Search" />
+</form> -->
 <?php
 require_once("vendor/autoload.php");
 $handler = new MySQLHandler("groups");
