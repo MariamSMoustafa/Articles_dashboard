@@ -11,7 +11,6 @@
  *
  * @author webre
  */
-require_once("DbHandler.php");
 class MySQLHandler implements DbHandler {
 
     //put your code here
@@ -28,7 +27,7 @@ class MySQLHandler implements DbHandler {
    
     public function connect(){
         try{
-        $handler = mysqli_connect(__HOST__,__USER__,__PASS__,__DB__,8111);
+            $handler = mysqli_connect(__HOST__,__USER__,__PASS__,__DB__);
         if($handler){
             $this->_db_handler = $handler;
             return true;
