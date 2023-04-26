@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8111
--- Generation Time: Apr 26, 2023 at 02:27 PM
+-- Generation Time: Apr 16, 2023 at 03:57 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -37,13 +37,6 @@ CREATE TABLE `articles` (
   `user_id` int(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `articles`
---
-
-INSERT INTO `articles` (`id`, `title`, `summery`, `image`, `full-article`, `publishing-date`, `user_id`) VALUES
-(1, 'hi', 'hi', 'hi', 'hi', '2023-04-26 11:33:06.000000', 3);
-
 -- --------------------------------------------------------
 
 --
@@ -56,13 +49,6 @@ CREATE TABLE `groups` (
   `icon` varchar(200) NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `groups`
---
-
-INSERT INTO `groups` (`id`, `name`, `icon`, `description`) VALUES
-(1, 'mariam', 'mmmmm', 'hiii');
 
 -- --------------------------------------------------------
 
@@ -79,14 +65,6 @@ CREATE TABLE `users` (
   `group_id` int(40) NOT NULL,
   `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `number`, `password`, `group_id`, `created_at`) VALUES
-(3, 'sara', 'sara@gmail', '55502222', '123456', 1, '2023-04-20 12:45:04.455483'),
-(4, 'mariam', 'mmm@jj', '123', '252', 1, '2023-04-20 13:25:56.907341');
 
 --
 -- Indexes for dumped tables
@@ -113,22 +91,6 @@ ALTER TABLE `users`
   ADD KEY `group_id` (`group_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `articles`
---
-ALTER TABLE `articles`
-  MODIFY `id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- Constraints for dumped tables
 --
 
@@ -136,7 +98,7 @@ ALTER TABLE `users`
 -- Constraints for table `articles`
 --
 ALTER TABLE `articles`
-  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `users`
