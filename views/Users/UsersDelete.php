@@ -8,7 +8,7 @@
   if(isset($_POST['submit'])){
    $handler->connect();
    $handler->delete($id);
-   header("Location: http://localhost/php-project/index.php?user");
+   header("Location: http://localhost/Articles_dashboard/index.php?user");
   }
  
  

@@ -9,13 +9,11 @@ $handler = new MySQLHandler("users");
   $newdata=array("name"=>$_POST['name']  ,"number"=>$_POST['number'],"group_id"=>$_POST['group_id']);
   $handler->connect();
   $handler->update($newdata,$id);
-  header("Location: http://localhost/php-project/index.php?user");
+  header("Location: http://localhost/Articles_dashboard/index.php?user");
 
  }
 
-
- 
-                   ?>
+ ?>
            
 <div class="container p-5">
 

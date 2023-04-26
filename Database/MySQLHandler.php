@@ -11,7 +11,7 @@
  *
  * @author webre
  */
-require_once("DbHandler.php");
+// require_once("DbHandler.php");
 // include "../config/dbconnect.php";
 class MySQLHandler implements DbHandler {
 
@@ -30,7 +30,7 @@ class MySQLHandler implements DbHandler {
     public function connect(){
         try{
             $handler = mysqli_connect(__HOST__,__USER__,__PASS__,__DB__);
-            if($handler){
+        if($handler){
             $this->_db_handler = $handler;
             return true;
         } else {
