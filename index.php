@@ -74,6 +74,16 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
                  require_once("views/Articles/ArticlesView.php"); 
              }
          }
+    else{
+        echo "<body >";
+        echo "<d class='container-fluid' style='display: flex;  justify-content: center;  margin-rigt:200px;'";
+        echo "<div class='d-flex flex-column'>";
+        echo "<div class='col-md-6'>";
+        echo "<div id='pieChart' style='height: 360px; width: 100%;'>";
+        echo "</div>";
+        echo "</div>";
+
+    }
 ?> 
   
    
