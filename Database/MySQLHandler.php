@@ -11,7 +11,7 @@
  *
  * @author webre
  */
-require_once("DbHandler.php");
+
 class MySQLHandler implements DbHandler {
 
     //put your code here
