@@ -1,5 +1,9 @@
 <center>
     
+<!-- <form class="m-3" action="search.php?query" method="GET">
+	<input type="text" name="query" />
+	<input class="p-1" type="submit" value="Search" />
+</form> -->
 <?php
 require_once("vendor/autoload.php");
 $handler = new MySQLHandler("groups");
@@ -12,13 +16,6 @@ if (!$handler->connect())
   die('Could not connect: ');
 
   }
-
- 
-
-
-
- 
-
 
 
 echo "<table align=center border=1px style=width:600px; line-height:40px;>";

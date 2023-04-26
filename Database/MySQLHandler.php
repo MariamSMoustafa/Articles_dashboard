@@ -11,7 +11,6 @@
  *
  * @author webre
  */
-
 class MySQLHandler implements DbHandler {
 
     //put your code here
@@ -26,19 +25,18 @@ class MySQLHandler implements DbHandler {
      
     }
    
-    public function connect() {
+    public function connect(){
         try{
-        $handler = mysqli_connect(__HOST__, __USER__, __PASS__, __DB__);
-        if ($handler) {
+            $handler = mysqli_connect(__HOST__,__USER__,__PASS__,__DB__);
+        if($handler){
             $this->_db_handler = $handler;
             return true;
         } else {
             return false;
-        }}
-        catch(Exception $ex){
-          
-            die("something went wrong please try to connect db again");
         }
+    }catch(Exception $e){
+        die("something went wrong please come back later");
+    }
     }
 
     public function disconnect() {
@@ -149,10 +147,10 @@ class MySQLHandler implements DbHandler {
         }
     }
     public function filter($column,$search){
-        $filter=new containFilter($column,$search);
-        $where=$filter->get_sql();
-        $table=$this->_table;
-        return this->get_results("select * from `$table` where $where");
+        // $filter=new containFilter($column,$search);
+        // $where=$filter->get_sql();
+        // $table=$this->_table;
+        // return this->get_results("select * from `$table` where $where");
     }
     public function delete($id) {
         $table = $this->_table;
@@ -169,7 +167,7 @@ class MySQLHandler implements DbHandler {
     }
 
     private function debug($sql) {
-        if (__Debug__Mode__ === 1)
+        if (__DebugMode__ === 1)
             echo "<h5>Sent Query: </h5>" . $sql . "<br/> <br/>";
     }
 
