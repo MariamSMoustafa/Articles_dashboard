@@ -50,8 +50,8 @@ $result=$handler->search('group_id', $groupid);
 
         echo  
          "<td>
-         <a   href='". $_SERVER["PHP_SELF"]. "?user=". $row["id"]." '> Edit </a><br>
-         <a  href=" . $_SERVER["PHP_SELF"] ."?user=delete&" ."id=".  $row["id"]  ." name='delete' type='submit'
+         <a  style='color:#584e46; font-weight:bold' href='". $_SERVER["PHP_SELF"]. "?user=". $row["id"]." '> Edit </a><br>
+         <a  style='color:#584e46; font-weight:bold' href=" . $_SERVER["PHP_SELF"] ."?user=delete&" ."id=".  $row["id"]  ." name='delete' type='submit'
          
          > Delete </a>  
         
@@ -67,7 +67,7 @@ $result=$handler->search('group_id', $groupid);
     <?php
         echo
  
-        "<a  href=" . $_SERVER["PHP_SELF"] ."?user=add&" ."id=" . $row["id"] ." name='add' type='button' class='btn btn-secondary'>Add User</a>"
+        "<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?user=add&" ."id=" . $row["id"] ." name='add' type='button' class='btn btn-secondary'>Add User</a>"
 
     ?>
    
