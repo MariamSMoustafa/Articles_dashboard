@@ -3,8 +3,11 @@
     require_once("vendor/autoload.php");
 
     $handler = new MySQLHandler("users");
-
-    $result = $handler->get_data(["id","name","email","number","group_id"]);
+    if(isset($_GET['id'])){
+    $groupid=intval($_GET['id']);
+$result=$handler->search('group_id', $groupid);
+}else{
+    $result = $handler->get_data(["id","name","email","number","group_id"]);}
 
 
     if (!$handler->connect())
@@ -19,9 +22,13 @@
         <th colspan=6><h2>Users</h2></th> 
         </tr><tr>";
 
-        foreach($result[0] as $key=>$val){
-            echo "<th>".$key."</th>";
-        }
+       
+            echo "<th>id</th>";
+            echo "<th>name</th>";
+            echo "<th>email</th>";
+            echo "<th>number</th>";
+            echo "<th>group id</th>";
+        
 
     echo "<th>Action</th></thead></tr>";
     

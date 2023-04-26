@@ -43,8 +43,9 @@ foreach($result as $row)
 
   echo "<td>" . $row['id'] . "</td>";
 
-  echo "<td>" . $row['name'] . "</td>";
-  echo "<td>" . $row['icon'] . "</td>";
+  echo "<td><a  href='" . $_SERVER["PHP_SELF"] . "?user=filter&". "id=" . $row["id"] ."' >" . $row['name'] . "</a></td>";
+
+  echo "<td>" ."<image class='mt-2 w-25' src=".$row['icon'] ." >" . "</td>";
 
   echo "<td>" . $row['description'] . "</td>";
 
