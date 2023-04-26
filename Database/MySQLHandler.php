@@ -29,7 +29,7 @@ class MySQLHandler implements DbHandler {
    
     public function connect(){
         try{
-        $handler = mysqli_connect("localhost","root","","php-project");
+            $handler = mysqli_connect(__HOST__,__USER__,__PASS__,__DB__);
         if($handler){
             $this->_db_handler = $handler;
             return true;
