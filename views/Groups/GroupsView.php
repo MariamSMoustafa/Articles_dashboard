@@ -43,15 +43,16 @@ foreach($result as $row)
 
   echo "<td>" . $row['id'] . "</td>";
 
-  echo "<td>" . $row['name'] . "</td>";
-  echo "<td>" . $row['icon'] . "</td>";
+  echo "<td><a style='color:#584e46; font-weight:bold'  href='" . $_SERVER["PHP_SELF"] . "?user=filter&". "id=" . $row["id"] ."' >" . $row['name'] . "</a></td>";
+
+  echo "<td>" ."<image class='mt-2 w-25' src=".$row['icon'] ." >" . "</td>";
 
   echo "<td>" . $row['description'] . "</td>";
 
   echo   "<td>
-  <a href='" . $_SERVER["PHP_SELF"] . "?group=" . $row["id"] . "'> Edit </a>
+  <a style='color:#584e46; font-weight:bold' href='" . $_SERVER["PHP_SELF"] . "?group=" . $row["id"] . "'> Edit </a><br>
   
-  <a  href=" . $_SERVER["PHP_SELF"] ."?group=delete&" ."id=" . $row["id"] ." name='delete' type='submit'> Delete </a>
+  <a style='color:#584e46; font-weight:bold' href=" . $_SERVER["PHP_SELF"] ."?group=delete&" ."id=" . $row["id"] ." name='delete' type='submit'> Delete </a>
   
   </td> ";
     
@@ -69,7 +70,7 @@ $handler->connect();
 
 
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-secondary " style="height:40px" data-toggle="modal" data-target="#myModal">
+  <button type="button" class="btn btn-secondary " style='color:white; font-weight:bold; Background-color:#584e46' data-toggle="modal" data-target="#myModal">
     Add Group
   </button>
 

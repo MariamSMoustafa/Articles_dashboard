@@ -11,8 +11,6 @@
  *
  * @author webre
  */
-// require_once("DbHandler.php");
-// include "../config/dbconnect.php";
 class MySQLHandler implements DbHandler {
 
     //put your code here

@@ -3,8 +3,11 @@
     require_once("vendor/autoload.php");
 
     $handler = new MySQLHandler("users");
-
-    $result = $handler->get_data(["id","name","email","number","group_id"]);
+    if(isset($_GET['id'])){
+    $groupid=intval($_GET['id']);
+$result=$handler->search('group_id', $groupid);
+}else{
+    $result = $handler->get_data(["id","name","email","number","group_id"]);}
 
 
     if (!$handler->connect())
@@ -19,9 +22,13 @@
         <th colspan=6><h2>Users</h2></th> 
         </tr><tr>";
 
-        foreach($result[0] as $key=>$val){
-            echo "<th>".$key."</th>";
-        }
+       
+            echo "<th>id</th>";
+            echo "<th>name</th>";
+            echo "<th>email</th>";
+            echo "<th>number</th>";
+            echo "<th>group id</th>";
+        
 
     echo "<th>Action</th></thead></tr>";
     
@@ -43,8 +50,8 @@
 
         echo  
          "<td>
-         <a   href='". $_SERVER["PHP_SELF"]. "?user=". $row["id"]." '> Edit </a><br>
-         <a  href=" . $_SERVER["PHP_SELF"] ."?user=delete&" ."id=".  $row["id"]  ." name='delete' type='submit'
+         <a  style='color:#584e46; font-weight:bold' href='". $_SERVER["PHP_SELF"]. "?user=". $row["id"]." '> Edit </a><br>
+         <a  style='color:#584e46; font-weight:bold' href=" . $_SERVER["PHP_SELF"] ."?user=delete&" ."id=".  $row["id"]  ." name='delete' type='submit'
          
          > Delete </a>  
         
@@ -60,7 +67,7 @@
     <?php
         echo
  
-        "<a  href=" . $_SERVER["PHP_SELF"] ."?user=add&" ."id=" . $row["id"] ." name='add' type='button' class='btn btn-secondary'>Add User</a>"
+        "<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?user=add&" ."id=" . $row["id"] ." name='add' type='button' class='btn btn-secondary'>Add User</a>"
 
     ?>
    
