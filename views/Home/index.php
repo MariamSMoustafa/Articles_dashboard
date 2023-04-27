@@ -1,6 +1,6 @@
 
 <?php 
-include "./../adminHeader.php";
+include "../../adminHeader.php";
             include "../../sidebar.php";
                    ?>
             <meta name="viewport" content="width=device-width, initial-scale=1">
