@@ -1,5 +1,5 @@
 <center>
-    
+
 <!-- <form class="m-3" action="search.php?query" method="GET">
 	<input type="text" name="query" />
 	<input class="p-1" type="submit" value="Search" />
@@ -66,20 +66,23 @@ $handler->connect();
 
 
 ?>
+<?php
+        echo "<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?group=add&" ."id=" . $row["id"] ." name='add' type='button' class='btn btn-secondary'>Add Group</a>";
+    ?>
 
 
 
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-secondary " style='color:white; font-weight:bold; Background-color:#584e46' data-toggle="modal" data-target="#myModal">
+  <!-- <button type="button" class="btn btn-secondary " style='color:white; font-weight:bold; Background-color:#584e46' data-toggle="modal" data-target="#myModal">
     Add Group
-  </button>
+  </button> -->
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+  <!-- <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog"> -->
     
       <!-- Modal content-->
-      <div class="modal-content">
+      <!-- <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">New Group</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -110,7 +113,7 @@ $handler->connect();
       </div>
       
     </div>
-  </div>
+  </div> -->
 
   
 </center>

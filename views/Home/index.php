@@ -46,6 +46,10 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
             include('../../config/dbconnect.php');
              require_once("../Groups/Groupdelete.php"); 
          }
+         else if(($_GET["group"])=='add'){
+            include('../../config/dbconnect.php');
+            require_once("../Groups/GroupCreate.php");
+        }
          else{
              require_once("../Groups/GroupsView.php"); 
          }
