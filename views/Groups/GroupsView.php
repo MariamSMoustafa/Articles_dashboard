@@ -85,21 +85,21 @@ $handler->connect();
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <form  enctype='multipart/form-data' onsubmit="addItems()" method="POST">
+          <form method="POST" action="<?php echo store_group()?>" enctype="multipart/form-data">
             <div class="form-group">
               <label for="name">Group Name:</label>
-              <input type="text" class="form-control" id="p_name" required>
+              <input type="text" name="name" class="form-control" id="p_name" required>
             </div>
             <div class="form-group">
               <label for="price">Icone:</label>
-              <input type="number" class="form-control" id="p_price" required>
+              <input type="number" name="icon" class="form-control" id="p_price" required>
             </div>
             <div class="form-group">
               <label for="qty">Description:</label>
-              <input type="text" class="form-control" id="p_desc" required>
+              <input type="text" name="description" class="form-control" id="p_desc" required>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-secondary" id="upload" style="height:40px">Add group</button>
+              <button name="submit" class="btn btn-secondary" id="upload" style="height:40px">Add group</button>
             </div>
           </form>
 
