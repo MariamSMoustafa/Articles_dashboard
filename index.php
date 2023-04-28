@@ -19,18 +19,6 @@
   <title>Admin</title>
 </head>
 <body >
-
-
-
-<!-- <div class="container-fluid " style="display: flex;
-  justify-content: center;
-  align-items: center; margin-left:-200px">
-  <div class="d-flex flex-column">
-    <div class="col-md-6">
-      <div id="pieChart" style="height: 360px; width: 100%;">
-      </div>
-    </div> -->
-
   </body>
 
 </html>

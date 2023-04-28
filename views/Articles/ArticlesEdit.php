@@ -8,9 +8,8 @@
 <head>
   <title>Admin</title>
 </head>
-<body >
-    <form method="POST" action="<?php echo edit_article()?>" enctype="multipart/form-data">
-    
+<body  >
+    <form method="POST" action="<?php echo update_article()?>" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title</label>
             <input name="title" type="text" class="form-control" id="exampleFormControlInput1" value="<?=$res[0]['title']?>">

@@ -4,7 +4,7 @@
     require_once("vendor/autoload.php");
     $handler = new MySQLHandler("articles");
 
-    $result = $handler->get_data(["id","title","summery","full-article","publishing-date","user_id"]);
+    $result = $handler->get_data(["id","title","summery","full-article","image","publishing-date","user_id"]);
 
 
     if (!$handler->connect())
@@ -17,7 +17,7 @@
 
         echo "<table align=center border=1px style=width:600px; line-height:40px;>";
         echo "<tr> 
-        <th colspan=7><h2>Articles</h2></th> 
+        <th colspan=8><h2>Articles</h2></th> 
         </tr><tr>";
 
         foreach($result[0] as $key=>$val){
@@ -39,7 +39,7 @@
         echo "<td>" . $row['summery'] . "</td>";
         echo "<td>" . $row['full-article'] . "</td>";
         echo "<td>" . $row['publishing-date'] . "</td>";
-
+        echo "<td>" ."<image class='mt-2 w-25' src=".$row['image'] ." >" . "</td>";
         echo "<td>" . $row['user_id'] . "</td>";
 
         echo  
