@@ -20,7 +20,7 @@
       <input name="group_id" type="number" class="form-control" id="g_id" value="<?=$res[0]['group_id']?>">
     </div>
    
-    <button name="update" type="submit" class="btn btn-primary">Update</button>
+    <button style="background-color:#584e46; color:white; border:none" name="update" type="submit" class="btn btn-primary">Update</button>
   </form>
 
     </div>

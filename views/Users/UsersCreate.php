@@ -28,7 +28,7 @@
                 
                         
             </div> 
-            <button name="submit" class="btn btn-success">Submit</button>
+            <button style="background-color:#584e46; color:white; border:none" name="submit" class="btn btn-success">Submit</button>
         </form>
 
     </div>
