@@ -1,5 +1,4 @@
 <?php 
-
 $handler = new MySQLHandler("users");
 
  $id=intval($_GET['user']);
