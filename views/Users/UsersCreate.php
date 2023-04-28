@@ -6,7 +6,7 @@
              $newdata=array("id"=>null,"name"=>$_POST['name'] , "email"=>$_POST['email'] , "group_id"=>$_POST['group_id'],"number"=>$_POST['number'],"password"=>$_POST['password']);
              $handler->connect();
              $handler->save($newdata);
-             header("Location: http://localhost/Articles_dashboard/index.php?user");
+             header("Location: http://localhost/Articles_dashboard/views/Home/index.php?user");
             }
                  ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">

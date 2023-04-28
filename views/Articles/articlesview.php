@@ -1,7 +1,7 @@
 <center>
         
 <?php
-    require_once("vendor/autoload.php");
+    require_once("../../vendor/autoload.php");
     $handler = new MySQLHandler("articles");
 
     $result = $handler->get_data(["id","title","summery","full-article","image","publishing-date","user_id"]);
