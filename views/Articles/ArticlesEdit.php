@@ -7,7 +7,7 @@
     $newdata=array("id"=>null,"title"=>$_POST['title'] , "summery"=>$_POST['summery'] ,"user_id"=>1,"full-article"=>$_POST['full-article']);
       $handler->connect();
   $handler->update($newdata,$id);
-  header("Location: http://localhost/Articles_dashboard/index.php?article");
+  header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
 }
  ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
