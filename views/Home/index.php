@@ -4,7 +4,9 @@ include('../../Database/DbHandler.php');
 include('../../Database/MySQLHandler.php');
 include "../../adminHeader.php";
 include "../../sidebar.php";
-            
+require_once("../../controllers/ArticleController.php");
+require_once("../../controllers/GroupController.php");
+require_once("../../controllers/UserController.php");      
 
                    ?>
             <meta name="viewport" content="width=device-width, initial-scale=1">

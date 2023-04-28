@@ -1,18 +1,6 @@
 <center>
-<?php 
- 
- $handler = new MySQLHandler("articles");
- 
-  $id=intval($_GET['id']);
-  $res=$handler->get_record_by_id($id);
-  if(isset($_POST['submit'])){
-   $handler->connect();
-   $handler->delete($id);
-   header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
-  }
-   ?>
-            
- <div class="container p-5 w-25 card" style="color:white">
+
+<div class="container p-5 w-25 card" style="color:white">
  
  <h4>Delete Article </h4>
  

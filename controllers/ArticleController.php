@@ -7,7 +7,7 @@ function store_article(){
              $newdata=array("id"=>null,"title"=>$_POST['title'] ,"image"=>"./assets/images/".$_FILES["image"]['name'], "summery"=>$_POST['summery'] ,"user_id"=>$_POST['user_id'],"full-article"=>$_POST['full-article']);
              $handler->connect();
              $handler->save($newdata);
-             header("Location: http://localhost/Articles_dashboard/index.php?article");
+             header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
             }
 }
 
@@ -20,8 +20,8 @@ function delete_article(){
  if(isset($_POST['submit'])){
   $handler->connect();
   $handler->delete($id);
-  header("Location: http://localhost/Articles_dashboard/index.php?article");
- }
+  header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
+}
 }
 
 function edit_article(){    

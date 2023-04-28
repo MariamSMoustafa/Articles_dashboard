@@ -4,7 +4,8 @@
     require_once("../../vendor/autoload.php");
     $handler = new MySQLHandler("articles");
 
-    $result = $handler->get_data(["id","title","summery","full-article","image","publishing-date","user_id"]);
+    $result = $handler->get_data(["id","title","summery","full-article","publishing-date","image","user_id"]);
+if ($result){
 
 
     if (!$handler->connect())
@@ -57,6 +58,7 @@
     }
 
         echo "</table>";
+}
     ?>
 
     <?php

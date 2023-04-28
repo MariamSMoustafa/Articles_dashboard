@@ -1,25 +1,36 @@
 <?php 
-
             require_once("vendor/autoload.php");
-            include "./adminHeader.php";
-            include "./sidebar.php";
-            require_once("controllers/ArticleController.php");
-            require_once("controllers/GroupController.php");
-            require_once("controllers/UserController.php");
-                   ?>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       <link rel="stylesheet" href="./assets/css/style.css"/>
-        <!DOCTYPE html>
-<html>
-<head>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-  <title>Admin</title>
-</head>
-<body >
-  </body>
+            session_start();
+            require_once("views/Login/Login.php");
+
+//             include "./adminHeader.php";
+//             include "./sidebar.php";
+                 ?>
+<!-- //             <meta name="viewport" content="width=device-width, initial-scale=1">
+//     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+//         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+//        <link rel="stylesheet" href="./assets/css/style.css"/>
+//         <!DOCTYPE html>
+// <html>
+// <head>
+// <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+// <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+//   <title>Admin</title>
+// </head>
+// <body > -->
+
+
+
+ <!-- <div class="container-fluid " style="display: flex;
+//   justify-content: center;
+//   align-items: center; margin-left:-200px">
+//   <div class="d-flex flex-column">
+//     <div class="col-md-6">
+//       <div id="pieChart" style="height: 360px; width: 100%;">
+//       </div>
+//     </div> -->
+
+<!-- //   </body>
 
 // </html> -->
       <?php
