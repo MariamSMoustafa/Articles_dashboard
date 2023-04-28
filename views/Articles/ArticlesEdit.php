@@ -1,15 +1,3 @@
-<?php 
- 
- $handler = new MySQLHandler("articles");
- $id=intval($_GET['article']);
- $res=$handler->get_record_by_id($id);
- if(isset($_POST['update'])){
-    $newdata=array("id"=>null,"title"=>$_POST['title'] , "summery"=>$_POST['summery'] ,"user_id"=>1,"full-article"=>$_POST['full-article']);
-      $handler->connect();
-  $handler->update($newdata,$id);
-  header("Location: http://localhost/Articles_dashboard/index.php?article");
-}
- ?>
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,9 +7,9 @@
 <head>
   <title>Admin</title>
 </head>
-<body >
-    <form method="POST" action="" enctype="multipart/form-data">
-    
+<body  >
+<?php $res=edit_article() ?>
+    <form method="POST" action="<?php echo update_article()?>" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title</label>
             <input name="title" type="text" class="form-control" id="exampleFormControlInput1" value="<?=$res[0]['title']?>">

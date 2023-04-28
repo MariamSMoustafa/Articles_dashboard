@@ -9,7 +9,7 @@ $handler = new MySQLHandler("groups");
   $newdata=array("name"=>$_POST['name'] , "icon"=>"./assets/images/".$_FILES["icon"]['name'] ,"description"=>$_POST['desc']);
   $handler->connect();
   $handler->update($newdata,$id);
-  header("Location: http://localhost/Articles_dashboard/index.php?group");
+  header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");
  }
 
 

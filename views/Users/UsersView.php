@@ -1,6 +1,6 @@
 <center>
     <?php
-    require_once("vendor/autoload.php");
+    require_once("../../vendor/autoload.php");
 
     $handler = new MySQLHandler("users");
     if(isset($_GET['id'])){
