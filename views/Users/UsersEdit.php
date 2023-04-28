@@ -1,6 +1,5 @@
 <?php 
 
- 
 $handler = new MySQLHandler("users");
 
  $id=intval($_GET['user']);
@@ -9,7 +8,7 @@ $handler = new MySQLHandler("users");
   $newdata=array("name"=>$_POST['name']  ,"number"=>$_POST['number'],"group_id"=>$_POST['group_id']);
   $handler->connect();
   $handler->update($newdata,$id);
-  header("Location: http://localhost/Articles_dashboard/index.php?user");
+  header("Location: http://localhost/Articles_dashboard/views/Home/index.php?user");
 
  }
 
