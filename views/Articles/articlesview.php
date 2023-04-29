@@ -1,20 +1,22 @@
-<center>
-        
+<center>    
 <?php
     require_once("../../vendor/autoload.php");
     $handler = new MySQLHandler("articles");
 
-    $result = $handler->get_data(["id","title","summery","full-article","publishing-date","image","user_id"]);
-if ($result){
-
-
-    if (!$handler->connect())
-
-    {
-
-         die('Could not connect: ');
-
-    }
+    if(isset($_GET['id'])){
+        $userid=intval($_GET['id']);
+    $result=$handler->search('user_id', $userid);
+    }else{
+        $result = $handler->get_data(["id","title","summery","full-article","publishing-date","image","user_id"]);
+        }
+    
+    
+        if (!$handler->connect())
+        {
+    
+             die('Could not connect: ');
+    
+        }
 
         echo "<table align=center border=1px style=width:600px; line-height:40px;>";
         echo "<tr> 
@@ -46,19 +48,14 @@ if ($result){
         echo  
          "<td>
          <a  style='color:#584e46; font-weight:bold' href='". $_SERVER["PHP_SELF"]. "?article=". $row["id"]. "'> Edit </a>
-         <a  style='color:#584e46; font-weight:bold'  href=" . $_SERVER["PHP_SELF"] ."?article=delete&" ."id=".  $row["id"]  ." name='delete' type='submit'
-         
-         > Delete </a>
+         <a  style='color:#584e46; font-weight:bold'  href=" . $_SERVER["PHP_SELF"] ."?article=delete&" ."id=".  $row["id"]  ." name='delete' type='submit'> Delete </a>
          </td> ";
-
-        
-
+         
         echo "</tr>";
 
     }
 
         echo "</table>";
-}
     ?>
 
     <?php

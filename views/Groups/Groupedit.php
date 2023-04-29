@@ -3,6 +3,7 @@
 <div class="container p-5">
 
 <h4 style="color:#584e46">Edit Group Detail</h4>
+
 <?php $res=edit_group() ?>
 <form id="update-Items" enctype='multipart/form-data' action="<?php echo update_group()?>" method="POST">
 	<div class="form-group">
@@ -22,7 +23,9 @@
       <image name="icon" class="mt-2" src="<?=$res[0]['icon']?>" style="width: 50px;">
     </div>
    
+
     <button style="background-color:#584e46; color:white; border:none"  name="submit" type="submit" class="btn btn-primary">Update</button>
+
   </form>
 
     </div>
