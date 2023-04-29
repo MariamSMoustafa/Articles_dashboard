@@ -11,6 +11,28 @@ function store_article(){
             }
 }
 
+function show_articles(){
+  $handler = new MySQLHandler("articles");
+  if(isset($_GET['id'])){
+  $result=filter();
+}else{
+  $result = $handler->get_data(["id","title","summary","image","full-article", "publishing-date", "user_id"]);
+}
+  if (!$handler->connect())
+  {
+
+       die('Could not connect: ');
+
+  }
+  return $result;
+}
+// function filter(){
+//   $handler = new MySQLHandler("srticles");
+//   $userid=intval($_GET['id']);
+// $result=$handler->search('user_id', $userid);
+// return $result;
+// }
+
 function delete_article(){
     
  $handler = new MySQLHandler("articles");

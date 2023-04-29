@@ -10,7 +10,9 @@
     <a href="/articles_dashboard/views/Home/index.php" ><i class="fa fa-home"></i> Dashboard</a>
     <a href="?group"   ><i class="fa fa-th-large"></i> Groups</a>
     <a href="?user" ><i class="fa fa-users"></i> Users</a>
+    <?php if($_SESSION['group']=='Admins'||$_SESSION['group']=='Editors'){ ?>
     <a href="?article" ><i class="fa fa-th"></i> Articles</a>
+    <?php } ?>
 </div>
  
 <div id="main">

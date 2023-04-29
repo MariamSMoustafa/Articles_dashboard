@@ -1,22 +1,13 @@
 <center>
-    
+
 <!-- <form class="m-3" action="search.php?query" method="GET">
 	<input type="text" name="query" />
 	<input class="p-1" type="submit" value="Search" />
 </form> -->
 <?php
 require_once("../../vendor/autoload.php");
-$handler = new MySQLHandler("groups");
-$result = $handler->get_data(["id","name","icon","description"]);
 
-if (!$handler->connect())
-
-  {
-
-  die('Could not connect: ');
-
-  }
-
+$result=show_groups();
 
 echo "<table align=center border=1px style=width:600px; line-height:40px;>";
 echo "<tr> 
@@ -61,45 +52,48 @@ foreach($result as $row)
   }
 
 echo "</table>";
-$handler->connect();
 
 
 
 ?>
-
+<?php
+        echo "<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?group=add&" ."id=" . $row["id"] ." name='add' type='button' class='btn btn-secondary'>Add Group</a>";
+    ?>
+  
+  </center>
 
 
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-secondary " style='color:white; font-weight:bold; Background-color:#584e46' data-toggle="modal" data-target="#myModal">
+  <!-- <button type="button" class="btn btn-secondary " style='color:white; font-weight:bold; Background-color:#584e46' data-toggle="modal" data-target="#myModal">
     Add Group
-  </button>
+  </button> -->
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+  <!-- <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog"> -->
     
       <!-- Modal content-->
-      <div class="modal-content">
+      <!-- <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">New Group</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <form  enctype='multipart/form-data' onsubmit="addItems()" method="POST">
+          <form method="POST" action="" enctype="multipart/form-data">
             <div class="form-group">
               <label for="name">Group Name:</label>
-              <input type="text" class="form-control" id="p_name" required>
+              <input type="text" name="name" class="form-control" id="p_name" required>
             </div>
             <div class="form-group">
               <label for="price">Icone:</label>
-              <input type="number" class="form-control" id="p_price" required>
+              <input type="number" name="icon" class="form-control" id="p_price" required>
             </div>
             <div class="form-group">
               <label for="qty">Description:</label>
-              <input type="text" class="form-control" id="p_desc" required>
+              <input type="text" name="description" class="form-control" id="p_desc" required>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-secondary" id="upload" style="height:40px">Add group</button>
+              <button name="submit" class="btn btn-secondary" id="upload" style="height:40px">Add group</button>
             </div>
           </form>
 
@@ -110,10 +104,9 @@ $handler->connect();
       </div>
       
     </div>
-  </div>
+  </div> -->
 
-  
-</center>
+
 
 
 <!-- echo   "<td>
