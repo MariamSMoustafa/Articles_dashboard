@@ -1,7 +1,7 @@
               
 <div class="container p-5">
 
-<h4 style="color:#584e46">Edit User Detail</h4>
+<h4 style="color:#584e46">Add User</h4>
 <form method="POST" action="<?php echo store_user()?>" enctype="multipart/form-data">
         
             <div class="mb-3">

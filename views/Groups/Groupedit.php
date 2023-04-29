@@ -18,7 +18,7 @@ $handler = new MySQLHandler("groups");
            
 <div class="container p-5">
 
-<h4>Edit Group Detail</h4>
+<h4 style="color:#584e46">Edit Group Detail</h4>
 
 <form id="update-Items" enctype='multipart/form-data' action="" method="POST">
 	<div class="form-group">
@@ -38,7 +38,7 @@ $handler = new MySQLHandler("groups");
       <image name="icon" class="mt-2" src="<?=$res[0]['icon']?>" style="width: 50px;">
     </div>
    
-    <button name="submit" type="submit" class="btn btn-primary">Update</button>
+    <button style="background-color:#584e46; color:white; border:none" name="submit" type="submit" class="btn btn-primary">Update</button>
   </form>
 
     </div>

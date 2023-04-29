@@ -7,7 +7,9 @@
 <head>
   <title>Admin</title>
 </head>
-<body  >
+<body>
+<div class="container p-5">
+<h4 style="color:#584e46">Edit Article Detail</h4>
 <?php $res=edit_article() ?>
     <form method="POST" action="<?php echo update_article()?>" enctype="multipart/form-data">
         <div class="mb-3">
@@ -36,8 +38,9 @@
             <label for="exampleFormControlTextarea1" class="form-label">Image</label>
             <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" >
         </div>
-        <button name="update" class="btn btn-success">Update</button>
+        <button style="background-color:#584e46; color:white; border:none" name="update" type="submit" class="btn btn-primary">Update</button>
     </form>
+</div>
 
     <script type="text/javascript" src="../../assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>

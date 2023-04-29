@@ -41,7 +41,7 @@ $result=$handler->search('group_id', $groupid);
 
         echo "<td>" . $row['id'] . "</td>";
 
-        echo "<td>" . $row['name'] . "</td>";
+        echo "<td><a style='color:#584e46; font-weight:bold'  href='" . $_SERVER["PHP_SELF"] . "?article=filter&". "id=" . $row["id"] ."' >" . $row['name'] . "</a></td>";
         echo "<td>" . $row['email'] . "</td>";
         echo "<td>" . $row['number'] . "</td>";
 
