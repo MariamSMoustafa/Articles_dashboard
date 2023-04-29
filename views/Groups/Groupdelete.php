@@ -9,10 +9,7 @@
    $handler->connect();
    $handler->delete($id);
    header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");
-  }
- 
- 
-  
+  } 
                     ?>
             
  <div class="container p-5 w-25 card" style="color:white">
