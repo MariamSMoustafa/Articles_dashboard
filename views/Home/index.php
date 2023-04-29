@@ -1,7 +1,6 @@
 
 <?php 
-include('../../Database/DbHandler.php');
-include('../../Database/MySQLHandler.php');
+require_once("../../vendor/autoload.php");
 include "../../adminHeader.php";
 include "../../sidebar.php";
 require_once("../../controllers/ArticleController.php");
@@ -39,11 +38,11 @@ require_once("../../controllers/UserController.php");
      <?php
 if(isset($_GET["group"])&&!isset($_GET["delete"])){
     if($_GET["group"]==intval($_GET["group"])){
-        include('../../config/dbconnect.php');
+        
         require_once("../Groups/Groupedit.php");
          }
          elseif(($_GET["group"])=='delete'){
-            include('../../config/dbconnect.php');
+            
              require_once("../Groups/Groupdelete.php"); 
          }
          else{
@@ -53,15 +52,15 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
 
      elseif(isset($_GET["user"])&&!isset($_GET["delete"])){
         if($_GET["user"]==intval($_GET["user"])) {
-            include('../../config/dbconnect.php');
+           
             require_once("../Users/UsersEdit.php");
         }
         else if(($_GET["user"])=='delete'){
-            include('../../config/dbconnect.php');
+            
             require_once("../Users/UsersDelete.php");
         }
         else if(($_GET["user"])=='add'){
-            include('../../config/dbconnect.php');
+           
             require_once("../Users/UsersCreate.php");
         }
         else{
@@ -71,15 +70,15 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
 
     elseif(isset($_GET["article"])&&!isset($_GET["delete"])){
         if($_GET["article"]==intval($_GET["article"])){
-                include('../../config/dbconnect.php');
+          
                  require_once("../Articles/ArticlesEdit.php");
              }
              elseif(($_GET["article"])=='delete'){
-                include('../../config/dbconnect.php');
+               
                  require_once("../Articles/ArticlesDelete.php"); 
              }
                else if(($_GET["article"])=='add'){
-                include('../../config/dbconnect.php');
+                
                 require_once("../Articles/ArticlesCreate.php");
             }
              else{
