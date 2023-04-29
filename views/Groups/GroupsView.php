@@ -6,17 +6,8 @@
 </form> -->
 <?php
 require_once("../../vendor/autoload.php");
-$handler = new MySQLHandler("groups");
-$result = $handler->get_data(["id","name","icon","description"]);
 
-if (!$handler->connect())
-
-  {
-
-  die('Could not connect: ');
-
-  }
-
+$result=show_groups();
 
 echo "<table align=center border=1px style=width:600px; line-height:40px;>";
 echo "<tr> 
@@ -61,7 +52,6 @@ foreach($result as $row)
   }
 
 echo "</table>";
-$handler->connect();
 
 
 
@@ -69,7 +59,8 @@ $handler->connect();
 <?php
         echo "<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?group=add&" ."id=" . $row["id"] ." name='add' type='button' class='btn btn-secondary'>Add Group</a>";
     ?>
-
+  
+  </center>
 
 
   <!-- Trigger the modal with a button -->
@@ -88,7 +79,7 @@ $handler->connect();
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="<?php echo store_group()?>" enctype="multipart/form-data">
+          <form method="POST" action="" enctype="multipart/form-data">
             <div class="form-group">
               <label for="name">Group Name:</label>
               <input type="text" name="name" class="form-control" id="p_name" required>
@@ -115,8 +106,7 @@ $handler->connect();
     </div>
   </div> -->
 
-  
-</center>
+
 
 
 <!-- echo   "<td>

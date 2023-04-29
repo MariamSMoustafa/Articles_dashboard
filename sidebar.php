@@ -9,9 +9,7 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <a href="/articles_dashboard/views/Home/index.php" ><i class="fa fa-home"></i> Dashboard</a>
     <a href="?group"   ><i class="fa fa-th-large"></i> Groups</a>
-    <?php if($_SESSION['group']=='Admins'){ ?>
     <a href="?user" ><i class="fa fa-users"></i> Users</a>
-    <?php } ?>
     <?php if($_SESSION['group']=='Admins'||$_SESSION['group']=='Editors'){ ?>
     <a href="?article" ><i class="fa fa-th"></i> Articles</a>
     <?php } ?>
