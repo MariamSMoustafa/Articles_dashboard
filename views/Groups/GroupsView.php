@@ -6,17 +6,8 @@
 </form> -->
 <?php
 require_once("../../vendor/autoload.php");
-$handler = new MySQLHandler("groups");
-$result = $handler->get_data(["id","name","icon","description"]);
 
-if (!$handler->connect())
-
-  {
-
-  die('Could not connect: ');
-
-  }
-
+$result=show_groups();
 
 echo "<table align=center border=1px style=width:600px; line-height:40px;>";
 echo "<tr> 
@@ -61,7 +52,6 @@ foreach($result as $row)
   }
 
 echo "</table>";
-$handler->connect();
 
 
 
