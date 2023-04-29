@@ -46,7 +46,7 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
              require_once("../Groups/Groupdelete.php"); 
          }
          else if(($_GET["group"])=='add'){
-            include('../../config/dbconnect.php');
+            
             require_once("../Groups/GroupCreate.php");
         }
          else{
@@ -56,20 +56,23 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
 
      elseif(isset($_GET["user"])&&!isset($_GET["delete"])){
         if($_GET["user"]==intval($_GET["user"])) {
-            include('../../config/dbconnect.php');
+            if($_SESSION['group']=='Admins'){
+            
             require_once("../Users/UsersEdit.php");
             }
             else{echo "<div class='alert alert-success'>you don't have the permission to edit in user data!</div>";}
         }
         else if(($_GET["user"])=='delete'){
-            include('../../config/dbconnect.php');
-            require_once("../Users/UsersDelete.php");
+            if($_SESSION['group']=='Admins'){
+            require_once("../Users/UsersDelete.php");}
+            else{echo "<div class='alert alert-success'>you don't have the permission to delete user!</div>";}
         }
        
 
         else if(($_GET["user"])=='add'){
-            include('../../config/dbconnect.php');
-            require_once("../Users/UsersCreate.php");
+            if($_SESSION['group']=='Admins'){
+            require_once("../Users/UsersCreate.php");}
+            else{echo "<div class='alert alert-success'>you don't have the permission to add user!</div>";}
         }
         else{
             require_once("../Users/UsersView.php"); 
