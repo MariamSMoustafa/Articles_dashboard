@@ -59,7 +59,8 @@ echo "</table>";
 <?php
         echo "<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?group=add&" ."id=" . $row["id"] ." name='add' type='button' class='btn btn-secondary'>Add Group</a>";
     ?>
-
+  
+  </center>
 
 
   <!-- Trigger the modal with a button -->
@@ -78,7 +79,7 @@ echo "</table>";
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="<?php echo store_group()?>" enctype="multipart/form-data">
+          <form method="POST" action="" enctype="multipart/form-data">
             <div class="form-group">
               <label for="name">Group Name:</label>
               <input type="text" name="name" class="form-control" id="p_name" required>
@@ -105,8 +106,7 @@ echo "</table>";
     </div>
   </div> -->
 
-  
-</center>
+
 
 
 <!-- echo   "<td>
