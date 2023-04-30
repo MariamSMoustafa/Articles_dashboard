@@ -122,6 +122,12 @@ class MySQLHandler implements DbHandler {
         return $this->get_results($sql);
     }
 
+    public function search_fun($column1, $column2, $column_value) {
+        $table = $this->_table;
+        $sql = "select * from `$table` where `$column1` like  '%" . $column_value . "%' OR `$column2` like '%" . $column_value . "%'";
+        return $this->get_results($sql);
+    }
+    
     public function update($edited_values, $id) {
         $table = $this->_table;
         $primary_key = $this->_primary_key;

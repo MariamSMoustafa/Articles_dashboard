@@ -1,6 +1,5 @@
            
 <div class="container p-5">
-
 <h4 style="color:#584e46">Edit Group Detail</h4>
 
 <?php $res=edit_group() ?>
@@ -16,10 +15,22 @@
       <label for="desc">Group Description:</label>
       <input name="desc" type="text" class="form-control" id="g_desc" value="<?=$res[0]['description']?>">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="icon">Group Icon:</label>
       <input type="file" name="icon" class="form-control" id="exampleFormControlTextarea1" >
       <image name="icon" class="mt-2" src="<?=$res[0]['icon']?>" style="width: 50px;">
+    </div> -->
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Icone:</label>
+      <select class="form-control form-control-sm" name="icon" class="form-control" required>
+        <option value="<?=$res[0]['icon']?>"><?=$res[0]['icon']?></option>
+        <option value='./assets/images/contact.jpg' alt='Option 1'> Option 1</option>
+        <option value='./assets/images/Dresses.jpg' alt='Option 2'> Option 2</option>
+        <option value='./assets/images/Screenshot (118).png' alt='Option 3'> Option 3</option>
+        <option value='./assets/images/Screenshot(99).png' alt='Option 4'> Option 4</option>
+        <option value='./assets/images/work-1.jpg' alt='Option 5'> Option 5</option>
+      </select>
     </div>
    
 

@@ -10,21 +10,22 @@
 <body>
 <div class="container p-5">
 <h4 style="color:#584e46">Edit Article Detail</h4>
+
 <?php $res=edit_article() ?>
-    <form method="POST" action="<?php echo update_article()?>" enctype="multipart/form-data">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Title</label>
-            <input name="title" type="text" class="form-control" id="exampleFormControlInput1" value="<?=$res[0]['title']?>">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Summery</label>
-            <textarea name="summery" type="text" class="form-control" id="exampleFormControlInput1" ><?=$res[0]['summery']?></textarea>
-        </div>
-       
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Full Article</label>
-            <textarea name="full-article" type="text" class="form-control" id="exampleFormControlInput1"><?=$res[0]['full-article']?></textarea>
-        </div>
+<form id="update-Items" enctype='multipart/form-data' action="<?php echo update_article()?>" method="POST">
+	
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input name="title" type="text" class="form-control" id="g_title" value="<?=$res[0]['title']?>">
+    </div>
+    <div class="form-group">
+      <label for="summery">Summery:</label>
+      <textarea name="summery" type="text" class="form-control" id="g_summery" value="<?=$res[0]['summery']?>"><?=$res[0]['summery']?></textarea>
+    </div>
+    <div class="form-group">
+      <label for="full-article">Full Article:</label>
+      <textarea name="full-article" type="text" class="form-control" id="g_full_article" value="<?=$res[0]['full-article']?>"><?=$res[0]['full-article']?></textarea>
+    </div>
      
         <!-- <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Post Creator</label>
@@ -34,11 +35,12 @@
              
             </select>
         </div> -->
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Image</label>
-            <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" >
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" name="image" class="form-control" id="g_image" value="<?=$res[0]['image']?>">
         </div>
-        <button style="background-color:#584e46; color:white; border:none" name="update" type="submit" class="btn btn-primary">Update</button>
+        <button style="background-color:#584e46; color:white; border:none"  name="submit" type="submit" class="btn btn-primary">Update</button>
+
     </form>
 </div>
 
