@@ -4,7 +4,8 @@ function store_article(){
             $handler = new MySQLHandler("articles");
 
             if(isset($_POST['submit'])){
-             $newdata=array("id"=>null,"title"=>$_POST['title'] ,"image"=>"./assets/images/".$_FILES["image"]['name'], "summery"=>$_POST['summery'] ,"user_id"=>$_POST['user_id'],"full-article"=>$_POST['full-article']);
+              
+             $newdata=array("id"=>null,"title"=>$_POST['title'] ,"image"=>"../../assets/images/".$_FILES["image"]['name'], "summery"=>$_POST['summery'] ,"user_id"=>$_POST['user_id'],"full-article"=>$_POST['full-article']);
              $handler->connect();
              $handler->save($newdata);
              header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
@@ -13,10 +14,12 @@ function store_article(){
 
 function show_articles(){
   $handler = new MySQLHandler("articles");
+  // $handler2 = new MySQLHandler("users");
+  // $userid = $handler->get_data("user_id");
   if(isset($_GET['id'])){
   $result=filter();
 }else{
-  $result = $handler->get_data(["id","title","summary","image","full-article", "publishing-date", "user_id"]);
+  $result = $handler->get_data(["id","title","summery","full-article","publishing-date","image","user_id"]);
 }
   if (!$handler->connect())
   {
@@ -56,7 +59,13 @@ function update_article(){
     $handler = new MySQLHandler("articles");
     $id=intval($_GET['article']);
     if(isset($_POST['update'])){
-        $newdata=array("id"=>null,"title"=>$_POST['title'] , "summery"=>$_POST['summery'] ,"user_id"=>1,"full-article"=>$_POST['full-article']);
+      if(file_exists($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name'])) {        
+        move_uploaded_file($_FILES['image']['tmp_name'], "../../assets/images/". $_FILES['image']['name']);
+        $newimg=array( "image"=>"../../assets/images/".$_FILES["image"]['name'] );
+        $handler->connect();
+        $handler->update($newimg,$id);
+      }
+        $newdata=array("id"=>null,"title"=>$_POST['title'] , "summery"=>$_POST['summery'] ,"full-article"=>$_POST['full-article']);
           $handler->connect();
       $handler->update($newdata,$id);
       header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");

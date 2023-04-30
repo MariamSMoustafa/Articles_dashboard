@@ -37,6 +37,7 @@
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Image</label>
             <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" >
+            <image name="image" class="mt-2" src="<?=$res[0]['image']?>" style="width: 50px;">
         </div>
         <button style="background-color:#584e46; color:white; border:none" name="update" type="submit" class="btn btn-primary">Update</button>
     </form>

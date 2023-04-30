@@ -18,7 +18,7 @@
             </div>
             <div class="mb-3">
               <label for="price" class="form-label">Icone:</label>
-              <input type="number" name="icon" class="form-control" id="p_price" required>
+              <input type="file" name="icon" class="form-control" id="exampleFormControlTextarea1" >
             </div>
             <div class="mb-3">
               <label for="qty" class="form-label">Description:</label>

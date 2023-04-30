@@ -2,21 +2,10 @@
 <?php
     require_once("../../vendor/autoload.php");
     $handler = new MySQLHandler("articles");
-
-    if(isset($_GET['id'])){
-        $userid=intval($_GET['id']);
-    $result=$handler->search('user_id', $userid);
-    }else{
-        $result = $handler->get_data(["id","title","summery","full-article","publishing-date","image","user_id"]);
-        }
-    
-    
-        if (!$handler->connect())
-        {
-    
-             die('Could not connect: ');
-    
-        }
+    $result=show_articles();
+    if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+    } 
 
         echo "<table align=center border=1px style=width:600px; line-height:40px;>";
         echo "<tr> 
@@ -43,7 +32,7 @@
         echo "<td>" . $row['full-article'] . "</td>";
         echo "<td>" . $row['publishing-date'] . "</td>";
         echo "<td>" ."<image class='mt-2 w-25' src=".$row['image'] ." >" . "</td>";
-        echo "<td>" . $row['user_id'] . "</td>";
+        echo "<td>" . $username. "</td>";
 
         echo  
          "<td>
