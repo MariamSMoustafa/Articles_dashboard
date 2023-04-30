@@ -11,15 +11,20 @@ require_once("../../vendor/autoload.php");
     {
       $search = $_POST['search'];
       $search_details = $handler->search_fun("id","name","$search");
+      if(empty($search_details)){
+        $searchErr = "There is no data like the one you entered!";
+        $search_details = show_groups();
+      }
     }
     else
     {
+      $search_details = show_groups();
       $searchErr = "Please enter what you want to search for!";
     }
       
   }
   else{
-    $search_details = $handler->get_data(["id","name","icon","description"]);
+    $search_details = show_groups();
 
   }
 ?>
@@ -44,6 +49,8 @@ require_once("../../vendor/autoload.php");
     echo "<tr> 
 <th colspan=6><h2>Groups Record</h2></th> 
 </tr><tr>";
+if($search_details)
+    {
     foreach($search_details[0] as $key=>$val) {
 
 
@@ -56,8 +63,7 @@ require_once("../../vendor/autoload.php");
 
     echo "<th>Action</th></thead></tr>";
 
-    if($search_details)
-    {
+    
     foreach($search_details as $row) {
 
         echo "<tr>";
@@ -86,9 +92,7 @@ require_once("../../vendor/autoload.php");
 
 }
 
-?>
-<?php
-        echo "<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?group=add&" ."id=" . $row["id"] ." name='add' type='button' class='btn btn-secondary'>Add Group</a>";
+        echo "<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?group=add name='add' type='button' class='btn btn-secondary'>Add Group</a>";
     ?>
 </div>
   
