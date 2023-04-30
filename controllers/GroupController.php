@@ -10,9 +10,27 @@ function store_group(){
             }
 }
 
+// function search_group(){
+//     $handler = new MySQLHandler("groups");
+//     if(isset($_GET['submit'])){
+//         $search_data = $_POST['name'];
+//         $handler->connect();
+//         $result=$handler->search('name', $search_data);
+        
+//     }
+//     else{
+//         die('Could not connect: ');
+//     }
+//     return $result;
+// }
+
 function show_groups(){
     $handler = new MySQLHandler("groups");
-$result = $handler->get_data(["id","name","icon","description"]);
+    if(isset($_GET['name'])){
+        // $result=search_group();
+    }else{
+        $result = $handler->get_data(["id","name","icon","description"]);
+    }
 
 if (!$handler->connect())
 
@@ -23,6 +41,22 @@ if (!$handler->connect())
   }
   return $result;
 }
+
+/////////////////////////////////
+
+// function search(){
+//     $handler = new MySQLHandler("groups");
+//     $artname=intval($_GET['name']);
+//   $result=$handler->search('name', $artname);
+//   return $result;
+// }
+
+//////////////////////////////////
+
+
+
+
+
 function delete_group(){
 
     $handler = new MySQLHandler("groups");
@@ -64,7 +98,7 @@ function update_group(){
             $handler->update($newimg,$id);
         }
  
-     $newdata=array("name"=>$_POST['name'] ,"description"=>$_POST['desc']);
+     $newdata=array("name"=>$_POST['name'], "icon"=>$_POST['icon'] ,"description"=>$_POST['desc']);
      $handler->connect();
      $handler->update($newdata,$id);
      header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");

@@ -57,6 +57,7 @@ function edit_article(){
 function update_article(){
     $handler = new MySQLHandler("articles");
     $id=intval($_GET['article']);
+
     if(isset($_POST['update'])){
       if(file_exists($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name'])) {        
         move_uploaded_file($_FILES['image']['tmp_name'], "../../assets/images/". $_FILES['image']['name']);
@@ -65,6 +66,7 @@ function update_article(){
         $handler->update($newimg,$id);
       }
         $newdata=array("id"=>null,"title"=>$_POST['title'] , "summery"=>$_POST['summery'] ,"full-article"=>$_POST['full-article']);
+
           $handler->connect();
       $handler->update($newdata,$id);
       header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
@@ -78,3 +80,4 @@ function username($userid){
   $user_name=$user_id[0]["name"];
   return $user_name;
 }
+
