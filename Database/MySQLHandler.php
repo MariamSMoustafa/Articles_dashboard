@@ -35,7 +35,12 @@ class MySQLHandler implements DbHandler {
             return false;
         }
     }catch(Exception $e){
-        die("something went wrong please come back later");
+        // die("something went wrong please come back later");
+        $exc=$e->getMessage();
+      $date = date('d.m.Y h:i:s');
+      $log = $exc."   |  Date:  ".$date."\n";
+      echo 'error';
+      error_log("$log", 3, "../assets/log-files/log.log");
     }
     }
 
@@ -69,6 +74,16 @@ class MySQLHandler implements DbHandler {
 
         return $this->get_results($sql);
     }
+
+    // public function get_record_by_name($name,) {
+
+    //     $primary_key = $this->name;
+
+    //     $table = $this->_table;
+    //     $sql = "select * from `$table` where `$name` = '$name' ";
+
+    //     return $this->get_results($sql);
+    // }
 
     public function get_results($sql) {
         $this->debug($sql);
@@ -122,12 +137,13 @@ class MySQLHandler implements DbHandler {
         return $this->get_results($sql);
     }
 
+
     public function search_fun($column1, $column2, $column_value) {
         $table = $this->_table;
         $sql = "select * from `$table` where `$column1` like  '%" . $column_value . "%' OR `$column2` like '%" . $column_value . "%'";
         return $this->get_results($sql);
     }
-    
+
     public function update($edited_values, $id) {
         $table = $this->_table;
         $primary_key = $this->_primary_key;
