@@ -58,7 +58,7 @@ function update_article(){
     $handler = new MySQLHandler("articles");
     $id=intval($_GET['article']);
 
-    if(isset($_POST['update'])){
+    if(isset($_POST['submit'])){
       if(file_exists($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name'])) {        
         move_uploaded_file($_FILES['image']['tmp_name'], "../../assets/images/". $_FILES['image']['name']);
         $newimg=array( "image"=>"../../assets/images/".$_FILES["image"]['name'] );
