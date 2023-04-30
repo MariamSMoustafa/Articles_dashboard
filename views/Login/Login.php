@@ -1,5 +1,5 @@
 <?php
-    if(!isset($_SESSION['user_name'])==true) {
+    if(!isset($_SESSION['name'])==true) {
 ?>
 <!DOCTYPE html>
 <html lang="en">

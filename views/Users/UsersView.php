@@ -55,7 +55,7 @@ if($_SESSION['group']=='Admins') {
 
     <?php
     if($_SESSION['group']=='Admins')
-        echo"<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?user=add&" ."id=" . $row["id"] ." name='add' type='button' class='btn btn-secondary'>Add User</a>"
+        echo"<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?user=add name='add' type='button' class='btn btn-secondary'>Add User</a>"
     
     ?>
    
