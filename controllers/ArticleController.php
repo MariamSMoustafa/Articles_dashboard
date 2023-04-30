@@ -15,8 +15,6 @@ function store_article(){
 }
 function show_articles(){
   $handler = new MySQLHandler("articles");
-  // $userhandler = new MySQLHandler("users");
-  // $userid = $handler->get_data("user_id");
   if(isset($_GET['id'])){
   $result=filter();
 }else{
@@ -75,7 +73,6 @@ function update_article(){
 }
 
 function username($userid){
-  // $handler = new MySQLHandler("articles");
   $userhandler = new MySQLHandler("users");
    $user_id = $userhandler->get_record_by_id($userid);
   $user_name=$user_id[0]["name"];
