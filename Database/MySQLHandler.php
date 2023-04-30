@@ -35,7 +35,12 @@ class MySQLHandler implements DbHandler {
             return false;
         }
     }catch(Exception $e){
-        die("something went wrong please come back later");
+        // die("something went wrong please come back later");
+        $exc=$e->getMessage();
+      $date = date('d.m.Y h:i:s');
+      $log = $exc."   |  Date:  ".$date."\n";
+      echo 'error';
+      error_log("$log", 3, "../assets/log-files/log.log");
     }
     }
 
