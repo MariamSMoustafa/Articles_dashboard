@@ -1,21 +1,7 @@
 <center>
     <?php
     require_once("../../vendor/autoload.php");
-
-    $handler = new MySQLHandler("users");
-    if(isset($_GET['id'])){
-    $groupid=intval($_GET['id']);
-$result=$handler->search('group_id', $groupid);
-}else{
-    $result = $handler->get_data(["id","name","email","number","group_id"]);}
-
-
-    if (!$handler->connect())
-    {
-
-         die('Could not connect: ');
-
-    }
+$result=show_users();
 
         echo "<table align=center border=1px style=width:600px; line-height:40px;>";
         echo "<tr> 
@@ -43,7 +29,7 @@ if($_SESSION['group']=='Admins') {
 
         echo "<td>" . $row['id'] . "</td>";
 
-        echo "<td>" . $row['name'] . "</td>";
+        echo "<td><a style='color:#584e46; font-weight:bold'  href='" . $_SERVER["PHP_SELF"] . "?article=filter&". "id=" . $row["id"] ."' >" . $row['name'] . "</a></td>";
         echo "<td>" . $row['email'] . "</td>";
         echo "<td>" . $row['number'] . "</td>";
 
