@@ -27,7 +27,7 @@ $result=$handler->search('group_id', $groupid);
             echo "<th>name</th>";
             echo "<th>email</th>";
             echo "<th>number</th>";
-            echo "<th>group id</th>";
+            echo "<th>group </th>";
         
 
     echo "<th>Action</th></thead></tr>";
@@ -45,7 +45,7 @@ $result=$handler->search('group_id', $groupid);
         echo "<td>" . $row['email'] . "</td>";
         echo "<td>" . $row['number'] . "</td>";
 
-        echo "<td>" . $row['group_id'] . "</td>";
+        echo "<td>" . groupname($row['group_id']) . "</td>";
 
 
         echo  

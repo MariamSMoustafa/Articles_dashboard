@@ -41,3 +41,10 @@ function update_user(){
     
     }
 }
+
+function groupname($groupid){
+  $userhandler = new MySQLHandler("groups");
+   $group_id = $userhandler->get_record_by_id($groupid);
+  $group_name=$group_id[0]["name"];
+  return $group_name;
+}
