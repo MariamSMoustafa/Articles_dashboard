@@ -3,18 +3,20 @@
     require_once("../../vendor/autoload.php");
     $handler = new MySQLHandler("articles");
     $result=show_articles();
-    if (isset($_SESSION['username'])) {
-        $username = $_SESSION['username'];
-    } 
-
+    
         echo "<table align=center border=1px style=width:600px; line-height:40px;>";
         echo "<tr> 
         <th colspan=8><h2>Articles</h2></th> 
         </tr><tr>";
 
-        foreach($result[0] as $key=>$val){
-            echo "<th>".$key."</th>";
-        }
+            echo "<th>id</th>";
+            echo "<th>title</th>";
+            echo "<th>summery</th>";
+            echo "<th>full_article</th>";
+            echo "<th>publishing-date</th>";
+            echo "<th>image</th>";
+            echo "<th>Article creator</th>";
+
 
     echo "<th>Action</th></thead></tr>";
     
@@ -32,7 +34,7 @@
         echo "<td>" . $row['full-article'] . "</td>";
         echo "<td>" . $row['publishing-date'] . "</td>";
         echo "<td>" ."<image class='mt-2 w-25' src=".$row['image'] ." >" . "</td>";
-        echo "<td>" . $username. "</td>";
+        echo "<td>" . username($row['user_id']) . "</td>";
 
         echo  
          "<td>

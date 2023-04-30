@@ -70,6 +70,16 @@ class MySQLHandler implements DbHandler {
         return $this->get_results($sql);
     }
 
+    // public function get_record_by_name($name,) {
+
+    //     $primary_key = $this->name;
+
+    //     $table = $this->_table;
+    //     $sql = "select * from `$table` where `$name` = '$name' ";
+
+    //     return $this->get_results($sql);
+    // }
+
     public function get_results($sql) {
         $this->debug($sql);
         $_handler_results = mysqli_query($this->_db_handler, $sql);
@@ -121,7 +131,6 @@ class MySQLHandler implements DbHandler {
         $sql = "select * from `$table` where `$column` like  '%" . $column_value . "%' ";
         return $this->get_results($sql);
     }
-
     public function update($edited_values, $id) {
         $table = $this->_table;
         $primary_key = $this->_primary_key;

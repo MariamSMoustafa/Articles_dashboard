@@ -28,20 +28,6 @@
             <textarea name="full-article" type="text" class="form-control" id="exampleFormControlInput1"></textarea>
         </div>
         <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">User</label>
-                <textarea name="user_id" type="user_id" class="form-control" id="exampleFormControlInput1"></textarea>     
-                        
-            </div>
-     
-        <!-- <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Post Creator</label>
-            <select name="post_creator" class="form-control">
-             
-                    <option value=""></option>
-             
-            </select>
-        </div> -->
-        <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Image</label>
             <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" >
         </div>
