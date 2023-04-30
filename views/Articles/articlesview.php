@@ -9,10 +9,10 @@
 
     if(isset($_GET['id'])){
         $userid=intval($_GET['id']);
-    $search_details=$handler->search('user_id', $userid);
+        $search_details=$handler->search('user_id', $userid);
     }
     else{
-        $search_details = $handler->get_data(["id","title","summery","full-article","publishing-date","image","user_id"]);
+        $search_details = show_articles();
     }
     
     if (!$handler->connect())
@@ -27,16 +27,20 @@
     {
         if(!empty($_POST['search']))
         {
-        $search = $_POST['search'];
-        $search_details = $handler->search_fun("id","title","$search");
+            $search = $_POST['search'];
+            $search_details = $handler->search_fun("id","title","$search");
+            if(empty($search_details)){
+                $searchErr = "There is no data like the one you entered!";
+                $search_details = show_articles();
+              }
         }
         else
         {
-        $searchErr = "Please enter what you want to search for!";
+            $searchErr = "Please enter what you want to search for!";
         }
     }
     else{
-    $search_details = $handler->get_data(["id","title","summery","full-article","publishing-date","image","user_id"]);
+        $search_details = show_articles();
     }
     ?>
 
@@ -102,10 +106,8 @@ if($search_details) {
 
     echo "</table>";
 }
-    ?>
 
-    <?php
-        echo "<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?article=add&" ."id=" . $row["id"] ." name='add' type='button' class='btn btn-secondary'>Add Article</a>";
+        echo "<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?article=add name='add' type='button' class='btn btn-secondary'>Add Article</a>";
     ?>
     </div>
    

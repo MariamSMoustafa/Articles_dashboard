@@ -6,20 +6,24 @@ $searchErr = '';
 $search_details='';
 if(isset($_POST['save']))
 {
-if(!empty($_POST['search']))
-{
-  $search = $_POST['search'];
-  $search_details = $handler->search_fun("id","name","$search");
-}
-else
-{
-  $searchErr = "Please enter what you want to search for!";
-}
+    if(!empty($_POST['search']))
+    {
+        $search = $_POST['search'];
+        $search_details = $handler->search_fun("id","name","$search");
+        if(empty($search_details)){
+            $searchErr = "There is no data like the one you entered!";
+            $search_details =show_users();
+        }
+    }
+    else
+    {
+        $search_details =show_users();
+        $searchErr = "Please enter what you want to search for!";
+    }
   
 }
 else{
-$search_details = $handler->get_data(["id","name","email","number","group_id"]);
-
+    $search_details =show_users();
 }
 ?>
 
