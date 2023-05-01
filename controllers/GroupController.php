@@ -1,9 +1,9 @@
 <?php 
 function store_group(){            
             $handler = new MySQLHandler("groups");
-
             if(isset($_POST['submit'])){
-             $newdata=array("id"=>null,"name"=>$_POST['name'] ,"icon"=>$_POST['icon'], "description"=>$_POST['description']);
+                move_uploaded_file($_FILES['icon']['tmp_name'], "../../assets/images/". $_FILES['icon']['name']);
+             $newdata=array("id"=>null,"name"=>$_POST['name'] ,"icon"=>"../../assets/images/".$_FILES["icon"]['name'] , "description"=>$_POST['description']);
              $handler->connect();
              $handler->save($newdata);
              header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");
@@ -98,7 +98,7 @@ function update_group(){
             $handler->update($newimg,$id);
         }
  
-     $newdata=array("name"=>$_POST['name'], "icon"=>$_POST['icon'] ,"description"=>$_POST['desc']);
+     $newdata=array("name"=>$_POST['name'],"description"=>$_POST['desc']);
      $handler->connect();
      $handler->update($newdata,$id);
      header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");

@@ -14,19 +14,15 @@
 <h4 style="color:#584e46">Add Group</h4>
         <form method="POST" action="<?php echo store_group()?>" enctype="multipart/form-data">
             <div class="mb-3">
-              <label for="name" class="form-label">Group Name:</label>
+              <label for="name" class="form-label">Name:</label>
               <input type="text" name="name" class="form-control" id="p_name" required>
             </div>
             <div class="mb-3">
               <label for="image" class="form-label">Icone:</label>
-              <select class="form-control form-control-sm" name="icon" class="form-control" required>
-                <option selected>Open this select menu</option>
-                <option value='./assets/images/contact.jpg' alt='Option 1'> Option 1</option>
-                <option value='./assets/images/Dresses.jpg' alt='Option 2'> Option 2</option>
-                <option value='./assets/images/Screenshot (118).png' alt='Option 3'> Option 3</option>
-                <option value='./assets/images/Screenshot(99).png' alt='Option 4'> Option 4</option>
-                <option value='./assets/images/work-1.jpg' alt='Option 5'> Option 5</option>
-              </select>            </div>
+      <input type="file" name="icon" class="form-control" id="exampleFormControlTextarea1" >
+    
+    
+                          </div>
             <div class="mb-3">
               <label for="description" class="form-label">Description:</label>
               <input type="text" name="description" class="form-control" id="p_desc" required>

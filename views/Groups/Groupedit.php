@@ -15,13 +15,13 @@
       <label for="desc">Group Description:</label>
       <input name="desc" type="text" class="form-control" id="g_desc" value="<?=$res[0]['description']?>">
     </div>
-    <!-- <div class="form-group">
+    <div class="form-group">
       <label for="icon">Group Icon:</label>
       <input type="file" name="icon" class="form-control" id="exampleFormControlTextarea1" >
       <image name="icon" class="mt-2" src="<?=$res[0]['icon']?>" style="width: 50px;">
-    </div> -->
+    </div>
 
-    <div class="mb-3">
+    <!-- <div class="mb-3">
       <label for="price" class="form-label">Icone:</label>
       <select class="form-control form-control-sm" name="icon" class="form-control" required>
         <option value="<?=$res[0]['icon']?>"><?=$res[0]['icon']?></option>
@@ -32,7 +32,7 @@
         <option value='./assets/images/work-1.jpg' alt='Option 5'> Option 5</option>
       </select>
     </div>
-   
+    -->
 
     <button style="background-color:#584e46; color:white; border:none"  name="submit" type="submit" class="btn btn-primary">Update</button>
 

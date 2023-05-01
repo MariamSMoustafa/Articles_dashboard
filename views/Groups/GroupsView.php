@@ -30,11 +30,11 @@ require_once("../../vendor/autoload.php");
 ?>
 
 
-<div class="container p-5" style="align:center; width:740px;">
+<div class="container px-5" style="align:center; width:740px;">
 	<form class="form-horizontal" action="#" method="post">
   <div class="input-group mb-3">
       <input name="search" type="text" placeholder="search here" class="form-control" aria-describedby="button-addon2">
-      <button type="submit" name="save" class="btn btn-outline-secondary" id="button-addon2">Search</button>
+      <button type="submit" name="save" class="btn mx-2 btn-outline-secondary" id="button-addon2">Search</button>
   </div>
 		<div class="form-group">
 			<span class="error" style="color:red;"><?php echo $searchErr;?></span>
