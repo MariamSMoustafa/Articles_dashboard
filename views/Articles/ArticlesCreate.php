@@ -16,20 +16,20 @@
     
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title</label>
-            <input name="title" type="text" class="form-control" id="exampleFormControlInput1">
+            <input name="title" type="text" class="form-control" id="exampleFormControlInput1" required>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Summery</label>
-            <textarea name="summery" type="text" class="form-control" id="exampleFormControlInput1"></textarea>
+            <textarea name="summery" type="text" class="form-control" id="exampleFormControlInput1" required></textarea>
         </div>
        
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Full Article</label>
-            <textarea name="full-article" type="text" class="form-control" id="exampleFormControlInput1"></textarea>
+            <textarea name="full-article" type="text" class="form-control" id="exampleFormControlInput1" required></textarea>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Image</label>
-            <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" >
+            <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" required >
         </div>
         <button style="background-color:#584e46; color:white; border:none" name="submit" class="btn btn-success">Submit</button>
     </form>
