@@ -12,16 +12,16 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">email</label>
-                <textarea name="email" type="email" class="form-control" id="exampleFormControlInput1" required></textarea>
+                <input name="email" type="email" class="form-control" id="exampleFormControlInput1" required></input>
             </div>
         
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">number</label>
-                <textarea name="number" type="number" class="form-control" id="exampleFormControlInput1" required></textarea>
+                <input name="number" type="number" class="form-control" id="exampleFormControlInput1" required></input>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">password</label>
-                <textarea name="password" type="password" class="form-control" id="exampleFormControlInput1" required></textarea>
+                <input name="password" type="password" class="form-control" id="password" required></input>
             </div>
         
             <div class="mb-3">
