@@ -1,17 +1,26 @@
 <?php 
 function store_group(){            
-            $handler = new MySQLHandler("groups");
-            if(isset($_POST['submit'])){
-                if ($_FILES['icon']['type'] == 'image/png' || $_FILES['icon']['type']  == 'image/jpeg' ) {
-                    move_uploaded_file($_FILES['icon']['tmp_name'], "../../assets/images/". $_FILES['icon']['name']);
-             $newdata=array("id"=>null,"name"=>$_POST['name'] ,"icon"=>"../../assets/images/".$_FILES["icon"]['name'] , "description"=>$_POST['description']);
-             $handler->connect();
-             $handler->save($newdata);
-             header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");
-                  }else{
-                    header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group=add&error=image type not supported, must be image/png or image/jpeg");      }
-                
-            }
+    try{        
+        $handler = new MySQLHandler("groups");
+        if(isset($_POST['submit'])){
+            if ($_FILES['icon']['type'] == 'image/png' || $_FILES['icon']['type']  == 'image/jpeg' ) {
+                move_uploaded_file($_FILES['icon']['tmp_name'], "../../assets/images/". $_FILES['icon']['name']);
+         $newdata=array("id"=>null,"name"=>$_POST['name'] ,"icon"=>"../../assets/images/".$_FILES["icon"]['name'] , "description"=>$_POST['description']);
+         $handler->connect();
+         $handler->save($newdata);
+         header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");
+              }else{
+                header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group=add&error=image type not supported, must be image/png or image/jpeg");      }
+            
+        }
+    }
+    catch(Exception $e){
+        $exc=$e->getMessage();
+          $date = date('d.m.Y h:i:s');
+          $log = $exc."   |  Date:  ".$date."\n";
+          echo 'error';
+          error_log("$log", 3, "../../assets/log-files/log.log");
+      }
 }
 
 // function search_group(){
