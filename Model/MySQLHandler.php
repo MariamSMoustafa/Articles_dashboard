@@ -35,7 +35,6 @@ class MySQLHandler implements DbHandler {
             return false;
         }
     }catch(Exception $e){
-        // die("something went wrong please come back later");
         $exc=$e->getMessage();
       $date = date('d.m.Y h:i:s');
       $log = $exc."   |  Date:  ".$date."\n";
@@ -75,15 +74,6 @@ class MySQLHandler implements DbHandler {
         return $this->get_results($sql);
     }
 
-    // public function get_record_by_name($name,) {
-
-    //     $primary_key = $this->name;
-
-    //     $table = $this->_table;
-    //     $sql = "select * from `$table` where `$name` = '$name' ";
-
-    //     return $this->get_results($sql);
-    // }
 
     public function get_results($sql) {
         $this->debug($sql);
