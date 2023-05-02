@@ -11,6 +11,12 @@
 <body >
 <div class="container p-5">
 
+<?php if(isset($_GET['error'])){ ?>
+        <div class="alert alert-danger w-100 p-2 my-3 text-center">
+            <?php echo $_GET['error']; ?>
+        </div> 
+    <?php } ?>
+    
 <h4 style="color:#584e46">Add Article</h4>
     <form method="POST" action="<?php echo store_article()?>" enctype="multipart/form-data">
     

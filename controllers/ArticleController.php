@@ -8,15 +8,14 @@ function store_article(){
 
   if(isset($_POST['submit'])){
     $file_type = $_FILES['image']['type'];
-    if ($file_type != 'image/png' && $file_type != 'image/jpeg' ) {
+    if ($file_type == 'image/png' || $file_type == 'image/jpeg' ) {
         // Display an alert message
-        echo "enter valid image";
+        $newdata=array("id"=>null,"title"=>$_POST['title'] ,"image"=>"../../assets/images/".$_FILES["image"]['name'], "summery"=>$_POST['summery'] ,"user_id"=>$user_id,"full-article"=>$_POST['full-article']);
+        $handler->connect();
+        $handler->save($newdata);
+        header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
       }else{
-   $newdata=array("id"=>null,"title"=>$_POST['title'] ,"image"=>"../../assets/images/".$_FILES["image"]['name'], "summery"=>$_POST['summery'] ,"user_id"=>$user_id,"full-article"=>$_POST['full-article']);
-   $handler->connect();
-   $handler->save($newdata);
-   header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
-  }
+        header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article=add&error=image type not supported, must be image/png or image/jpeg");      }
 }
 }
 function show_articles(){
@@ -65,19 +64,26 @@ function update_article(){
     $id=intval($_GET['article']);
 
     if(isset($_POST['submit'])){
-      if(file_exists($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name'])) {        
+
+      $file_type = $_FILES['image']['type'];
+      if ($file_type == 'image/png' || $file_type == 'image/jpeg' ) {    
+
+      if(file_exists($_FILES['image']['tmp_name']) || is_uploaded_file($_FILES['image']['tmp_name'])) {    
         move_uploaded_file($_FILES['image']['tmp_name'], "../../assets/images/". $_FILES['image']['name']);
         $newimg=array( "image"=>"../../assets/images/".$_FILES["image"]['name'] );
         $handler->connect();
-        $handler->update($newimg,$id);
-      }
+        $handler->update($newimg,$id);}
+    
+      
         $newdata=array("id"=>null,"title"=>$_POST['title'] , "summery"=>$_POST['summery'] ,"full-article"=>$_POST['full-article']);
 
           $handler->connect();
       $handler->update($newdata,$id);
       header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
-    
+    }else{
+      header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article=$id&error=image type not supported, must be image/png or image/jpeg");      }
     }
+    
 }
 
 function username($userid){
