@@ -25,9 +25,8 @@ function store_article(){
         echo 'error';
         error_log("$log", 3, "../../assets/log-files/log.log");
     }
+
 }
-
-
 function show_articles(){
     $handler = new MySQLHandler("articles");
     if(isset($_GET['id'])){
@@ -85,8 +84,7 @@ function update_article(){
           }else{
               header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article=$id&error=image type not supported, must be image/png or image/jpeg"); 
               throw new Exception("article edit failed because of image wrong format");   
-          }
-        }
+          }}
             $newdata=array("id"=>null,"title"=>$_POST['title'] , "summery"=>$_POST['summery'] ,"full-article"=>$_POST['full-article']);
             $handler->connect();
             $handler->update($newdata,$id);
@@ -119,3 +117,4 @@ function articles_filter(){
   $result=$handler->search('user_id', $user_id);
   return $result;
 }
+

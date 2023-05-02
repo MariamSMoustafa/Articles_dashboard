@@ -48,8 +48,6 @@ if (chLine) {
   });
 }
 
-
-
 /* bar chart */
 var chBar = document.getElementById("chBar");
 if (chBar) {
