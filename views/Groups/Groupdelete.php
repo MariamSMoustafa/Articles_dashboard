@@ -1,7 +1,11 @@
 
 <center>
 
-            
+<?php if(isset($_GET['error'])){ ?>
+        <div class="alert alert-danger w-25 p-2 my-3 text-center">
+            <?php echo $_GET['error']; ?>
+        </div> 
+    <?php } ?>      
  <div class="container p-5 w-25 card" style="color:white">
  
  <h4>Delete Group </h4>

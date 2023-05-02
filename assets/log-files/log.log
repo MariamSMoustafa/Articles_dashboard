@@ -8,3 +8,7 @@ Unknown database 'php-project1'   |  Date:  30.04.2023 09:02:21
 No such user in database   |  Date:  02.05.2023 01:52:14
 article create failed because of image wrong format   |  Date:  02.05.2023 03:02:28
 article edit failed because of image wrong format   |  Date:  02.05.2023 03:11:23
+group create failed because of image wrong format   |  Date:  02.05.2023 04:03:04
+group edit failed because of image wrong format   |  Date:  02.05.2023 04:04:55
+this group contains users please delete users first   |  Date:  02.05.2023 04:20:59
+this group contains users please delete users first   |  Date:  02.05.2023 04:21:29

@@ -11,7 +11,7 @@ function store_group(){
          header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");
               }else{
                 header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group=add&error=image type not supported, must be image/png or image/jpeg");      }
-            
+                throw new Exception("group create failed because of image wrong format");
         }
     }
     catch(Exception $e){
@@ -71,7 +71,7 @@ if (!$handler->connect())
 
 
 function delete_group(){
-
+try{
     $handler = new MySQLHandler("groups");
     $userhandler=new MySQLHandler("users");
     $id=intval($_GET['id']);
@@ -83,10 +83,18 @@ function delete_group(){
      header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");}
     
     else{
-        header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");
+        header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group=delete&id=$id&error=can't delete this group"); 
+        throw new Exception("this group contains users please delete users first"); 
           
         }
-    }
+    }}
+    catch(Exception $e){
+        $exc=$e->getMessage();
+          $date = date('d.m.Y h:i:s');
+          $log = $exc."   |  Date:  ".$date."\n";
+          echo 'error';
+          error_log("$log", 3, "../../assets/log-files/log.log");
+      }
 }
     
 
@@ -99,6 +107,7 @@ function edit_group(){
  return $res;
 }
 function update_group(){
+    try{
     $handler = new MySQLHandler("groups");
 
     $id=intval($_GET['group']);
@@ -107,7 +116,7 @@ function update_group(){
         if(file_exists($_FILES['icon']['tmp_name']) || is_uploaded_file($_FILES['icon']['tmp_name'])) {     
             if($_FILES['icon']['type'] != 'image/png' && $_FILES['icon']['type'] != 'image/jpeg')   {
                 header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group=$id&error=image type not supported, must be image/png or image/jpeg");    
-        
+                throw new Exception("group edit failed because of image wrong format");
             }
             else{
                 move_uploaded_file($_FILES['icon']['tmp_name'], "../../assets/images/". $_FILES['icon']['name']);
@@ -123,5 +132,12 @@ function update_group(){
      $handler->update($newdata,$id);
      if($_FILES['icon']['type'] == 'image/png' || $_FILES['icon']['type'] == 'image/jpeg')
      header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");
-    }
+    }}
+    catch(Exception $e){
+        $exc=$e->getMessage();
+          $date = date('d.m.Y h:i:s');
+          $log = $exc."   |  Date:  ".$date."\n";
+          echo 'error';
+          error_log("$log", 3, "../../assets/log-files/log.log");
+      }
 }
