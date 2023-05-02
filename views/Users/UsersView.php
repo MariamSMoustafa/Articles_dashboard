@@ -4,6 +4,7 @@ require_once("../../vendor/autoload.php");
 $handler = new MySQLHandler("users");
 $searchErr = '';
 $search_details='';
+$displayErr = 'none';
 if(isset($_POST['save']))
 {
     if(!empty($_POST['search']))
@@ -11,12 +12,14 @@ if(isset($_POST['save']))
         $search = $_POST['search'];
         $search_details = $handler->search_fun("id","name","$search");
         if(empty($search_details)){
+            $displayErr = 'block';
             $searchErr = "There is no data like the one you entered!";
             $search_details =show_users();
         }
     }
     else
     {
+        $displayErr = 'block';
         $search_details =show_users();
         $searchErr = "Please enter what you want to search for!";
     }
@@ -34,8 +37,10 @@ else{
             <button type="submit" name="save" style="color:white; font-weight:bold; Background-color:#584e46" class="btn btn-outline-secondary mx-2" id="button-addon2">Search</button>
         </div>
 		<div class="form-group">
-			<span class="error" style="color:red;"><?php echo $searchErr;?></span>
-		</div>
+            <div class="alert alert-danger error" role="alert" style="display: <?php echo $displayErr;?>;">
+                <?php echo $searchErr;?>
+            </div>
+        </div>
     </form>
 
     <?php
