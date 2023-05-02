@@ -74,6 +74,7 @@
 	        echo "<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?group=add name='add' type='button' class='btn btn-secondary'>Add Group</a>";
 	    ?>
 	</div>
+  <br><br>
 	  
 	</center>
 
