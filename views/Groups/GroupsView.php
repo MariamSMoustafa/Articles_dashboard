@@ -6,6 +6,7 @@
 	    $handler = new MySQLHandler("groups");
 	  $searchErr = '';
 	  $search_details='';
+    $displayErr = 'none';
 	  if(isset($_POST['save']))
 	  {
 	      if(!empty($_POST['search']))
@@ -13,15 +14,17 @@
 	        $search = $_POST['search'];
 	        $search_details = $handler->search_fun("id","name","$search");
 	        if(empty($search_details)){
+            $displayErr = 'block';
 	          $searchErr = "There is no data like the one you entered!";
 	          $search_details = show_groups();
 	        }
 	      }
 	      else
 	      {
-	    $search_details = show_groups();
-	    $searchErr = "Please enter what you want to search for!";
-	}   
+          $displayErr = 'block';
+          $search_details = show_groups();
+          $searchErr = "Please enter what you want to search for!";
+        }   
 	  }
 	  else{
 	    $search_details = show_groups();
@@ -38,8 +41,10 @@
 	            <button type="submit" name="save" style="color:white; font-weight:bold; Background-color:#584e46" class="btn mx-2 btn-outline-secondary" id="button-addon2">Search</button>
 	        </div>
 	        <div class="form-group">
-	            <span class="error" style="color:red;"><?php echo $searchErr;?></span>
-	        </div>
+            <div class="alert alert-danger error" role="alert" style="display: <?php echo $displayErr;?>;">
+                <?php echo $searchErr;?>
+            </div>
+        </div>
 	    </form>
 	<?php
 	require_once("../../vendor/autoload.php");
