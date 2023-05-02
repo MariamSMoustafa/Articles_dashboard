@@ -33,7 +33,7 @@
     </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Image</label>
-            <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" >
+            <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" value="<?=$res[0]['image']?>">
             <image name="image" class="mt-2" src="<?=$res[0]['image']?>" style="width: 50px;">
 
         </div>
