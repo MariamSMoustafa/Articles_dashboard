@@ -30,21 +30,29 @@ function store_user(){
 }
 
 function delete_user(){
-    
+try {
     $handler = new MySQLHandler("users");
     $articlehandler = new MySQLHandler("articles");
-    $id=intval($_GET['id']);
-      $user_has_article=$articlehandler->search('user_id', $id);
-      if ($user_has_article){
-        header("Location: http://localhost/Articles_dashboard/views/Home/index.php?user=delete&error=can't delete this user ");
-      }
-      else {
-      if(isset($_POST['submit'])) {
-          $handler->connect();
-          $handler->delete($id);
-          header("Location: http://localhost/Articles_dashboard/views/Home/index.php?user");
-      }
-  }
+    if(isset($_POST['submit'])) {
+        $id=intval($_GET['id']);
+        $user_has_article=$articlehandler->search('user_id', $id);
+        if ($user_has_article) {
+            header("Location: http://localhost/Articles_dashboard/views/Home/index.php?user=delete&error=can't delete this user ");
+            throw new Exception("can't delete this user because it has article");
+        } else {
+            $handler->connect();
+            $handler->delete($id);
+            header("Location: http://localhost/Articles_dashboard/views/Home/index.php?user");
+
+        }
+    }
+}catch(Exception $e){
+  $exc=$e->getMessage();
+    $date = date('d.m.Y h:i:s');
+    $log = $exc."   |  Date:  ".$date."\n";
+    echo 'error';
+    error_log("$log", 3, "../../assets/log-files/log.log");
+}
 }
 
 function edit_user(){    
