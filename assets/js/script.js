@@ -12,128 +12,71 @@ function closeNav() {
   document.getElementById("main").style.display="block";  
 }
 
-var pieChartValues = [{
-  y: 39.16,
-  exploded: true,
-  indexLabel: "Mariam",
-  color: "#1f77b4"
-}, {
-  y: 21.8,
-  indexLabel: "Sara",
-  color: "#ff7f0e"
-}, {
-  y: 21.45,
-  indexLabel: "Ahmed",
-  color: " #ffbb78"
-}, {
-  y: 5.56,
-  indexLabel: "Bakry",
-  color: "#d62728"
-}, {
-  y: 5.38,
-  indexLabel: "Esraa",
-  color: "#98df8a"
-}, {
-  y: 3.73,
-  indexLabel: "user1",
-  color: "#bcbd22"
-}, {
-  y: 2.92,
-  indexLabel: "user2",
-  color: "#f7b6d2"
-}];
-renderPieChart(pieChartValues);
+var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
 
-function renderPieChart(values) {
+/* large line chart */
+var chLine = document.getElementById("chLine");
+var chartData = {
+  labels: ["Zero", "Groups", "Editors", "Normal"],
+  datasets: [{
+    data: [589, 445, 483, 503, 689, 692, 634],
+    backgroundColor: 'transparent',
+    borderColor: colors[0],
+    borderWidth: 4,
+    pointBackgroundColor: colors[0]
+  }
 
-  var chart = new CanvasJS.Chart("pieChart", {
-    backgroundColor: "white",
-    colorSet: "colorSet2",
-
-    title: {
-      text: "Users Pie Chart",
-      fontFamily: "Verdana",
-      fontSize: 25,
-      fontWeight: "normal",
+  ]
+};
+if (chLine) {
+  new Chart(chLine, {
+  type: 'line',
+  data: chartData,
+  options: {
+    scales: {
+      xAxes: [{
+        ticks: {
+          beginAtZero: false
+        }
+      }]
     },
-    animationEnabled: true,
-    data: [{
-      indexLabelFontSize: 15,
-      indexLabelFontFamily: "Monospace",
-      indexLabelFontColor: "darkgrey",
-      indexLabelLineColor: "darkgrey",
-      indexLabelPlacement: "outside",
-      type: "pie",
-      showInLegend: false,
-      toolTipContent: "<strong>#percent%</strong>",
-      dataPoints: values
-    }]
-  });
-  chart.render();
-}
-var columnChartValues = [{
-  y: 686.04,
-  label: "one",
-  color: "#1f77b4"
-}, {
-  y: 381.84,
-  label: "two",
-  color: "#ff7f0e"
-}, {
-  y: 375.76,
-  label: "three",
-  color: " #ffbb78"
-}, {
-  y: 97.48,
-  label: "four",
-  color: "#d62728"
-}, {
-  y: 94.2,
-  label: "five",
-  color: "#98df8a"
-}, {
-  y: 65.28,
-  label: "Hi",
-  color: "#bcbd22"
-}, {
-  y: 51.2,
-  label: "Hello",
-  color: "#f7b6d2"
-}];
-renderColumnChart(columnChartValues);
-
-function renderColumnChart(values) {
-
-  var chart = new CanvasJS.Chart("columnChart", {
-    backgroundColor: "white",
-    colorSet: "colorSet3",
-    title: {
-      text: "Column Chart",
-      fontFamily: "Verdana",
-      fontSize: 25,
-      fontWeight: "normal",
-    },
-    animationEnabled: true,
     legend: {
-      verticalAlign: "bottom",
-      horizontalAlign: "center"
+      display: false
     },
-    theme: "theme2",
-    data: [
-
-      {
-        indexLabelFontSize: 15,
-        indexLabelFontFamily: "Monospace",
-        indexLabelFontColor: "darkgrey",
-        indexLabelLineColor: "darkgrey",
-        indexLabelPlacement: "outside",
-        type: "column",
-        showInLegend: false,
-        legendMarkerColor: "grey",
-        dataPoints: values
-      }
-    ]
+    responsive: true
+  }
   });
-
-  chart.render();
 }
+
+
+
+/* bar chart */
+var chBar = document.getElementById("chBar");
+if (chBar) {
+  new Chart(chBar, {
+  type: 'bar',
+  data: {
+    labels: ["Zero", "Groups", "Editors", "Normal"],
+    datasets: [{
+      data: [589, 445, 483, 503, 689, 692, 634],
+      backgroundColor: colors[0]
+    },
+    {
+      data: [639, 465, 493, 478, 589, 632, 674],
+      backgroundColor: colors[1]
+    }]
+  },
+  options: {
+    legend: {
+      display: false
+    },
+    scales: {
+      xAxes: [{
+        barPercentage: 0.4,
+        categoryPercentage: 0.5
+      }]
+    }
+  }
+  });
+}
+

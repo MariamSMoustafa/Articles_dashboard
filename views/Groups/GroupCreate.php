@@ -11,7 +11,7 @@
     <body >
         <div class="container p-5">
 
-        <h4 style="color:#584e46">Add Group</h4>
+        <h4 style="color:#3B3131">Add Group</h4>
         <?php if(isset($_GET['error'])){ ?>
                 <div class="alert alert-danger w-100 p-2 my-3 text-center">
                     <?php echo $_GET['error']; ?>
@@ -31,7 +31,7 @@
                       <input type="text" name="description" class="form-control" id="p_desc" required>
                     </div>
                     <div class="mb-3">
-                      <button style="background-color:#584e46; color:white; border:none" name="submit" class="btn btn-success" id="upload" style="height:40px">Add group</button>
+                      <button style="background-color:#3B3131; color:white; border:none" name="submit" class="btn btn-success" id="upload" style="height:40px">Add group</button>
                     </div>
                 </form>
         </div>

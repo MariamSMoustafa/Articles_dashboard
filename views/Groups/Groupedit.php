@@ -1,5 +1,5 @@
 <div class="container p-5">
-    <h4 style="color:#584e46">Edit Group Detail</h4>
+    <h4 style="color:#3B3131">Edit Group Detail</h4>
     <?php if(isset($_GET['error'])){ ?>
             <div class="alert alert-danger w-100 p-2 my-3 text-center">
                 <?php echo $_GET['error']; ?>
@@ -24,7 +24,7 @@
             <input type="file" name="icon" class="form-control" id="exampleFormControlTextarea1" >
             <image name="icon" class="mt-2" src="<?=$res[0]['icon']?>" style="width: 50px;">
         </div>
-        <button style="background-color:#584e46; color:white; border:none"  name="submit" type="submit" class="btn btn-primary">Update</button>
+        <button style="background-color:#3B3131; color:white; border:none"  name="submit" type="submit" class="btn btn-primary">Update</button>
     </form>
 
 </div>

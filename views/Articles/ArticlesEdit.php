@@ -14,7 +14,7 @@
                     <?php echo $_GET['error']; ?>
                 </div> 
             <?php } ?>
-        <h4 style="color:#584e46">Edit Article Detail</h4>
+        <h4 style="color:#3B3131">Edit Article Detail</h4>
         <?php $res=edit_article() ?>
         <form id="update-Items" enctype='multipart/form-data' action="<?php echo update_article()?>" method="POST">
             <div class="form-group">
@@ -34,7 +34,7 @@
               <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" value="<?=$res[0]['image']?>">
               <image name="image" class="mt-2" src="<?=$res[0]['image']?>" style="width: 50px;">
             </div>
-              <button style="background-color:#584e46; color:white; border:none"  name="submit" type="submit" class="btn btn-primary">Update</button>
+              <button style="background-color:#3B3131; color:white; border:none"  name="submit" type="submit" class="btn btn-primary">Update</button>
         </form>
         </div>
 

@@ -16,7 +16,7 @@
                     </div> 
                 <?php } ?>
                 
-            <h4 style="color:#584e46">Add Article</h4>
+            <h4 style="color:#3B3131">Add Article</h4>
                 <form method="POST" action="<?php echo store_article()?>" enctype="multipart/form-data">
                 
                     <div class="mb-3">
@@ -36,7 +36,7 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Image</label>
                         <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" required >
                     </div>
-                    <button style="background-color:#584e46; color:white; border:none" name="submit" class="btn btn-success">Submit</button>
+                    <button style="background-color:#3B3131; color:white; border:none" name="submit" class="btn btn-success">Submit</button>
                 </form>
             </div>
 
