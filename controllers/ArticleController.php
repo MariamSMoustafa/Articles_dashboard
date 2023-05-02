@@ -16,7 +16,7 @@ try{
         header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
       }else{ 
         header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article=add&error=image type not supported, must be image/png or image/jpeg");     
-        throw new Exception("image wrong");
+        throw new Exception("article create failed because of image wrong format");
        }
 }
 }catch(Exception $e){
@@ -69,6 +69,7 @@ function edit_article(){
  return $res;
 }
 function update_article(){
+  try{
     $handler = new MySQLHandler("articles");
     $id=intval($_GET['article']);
 
@@ -90,7 +91,16 @@ function update_article(){
       $handler->update($newdata,$id);
       header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
     }else{
-      header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article=$id&error=image type not supported, must be image/png or image/jpeg");      }
+      header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article=$id&error=image type not supported, must be image/png or image/jpeg"); 
+      throw new Exception("article edit failed because of image wrong format");   
+      }
+    }
+  }catch(Exception $e){
+      $exc=$e->getMessage();
+        $date = date('d.m.Y h:i:s');
+        $log = $exc."   |  Date:  ".$date."\n";
+        echo 'error';
+        error_log("$log", 3, "../../assets/log-files/log.log");
     }
     
 }
