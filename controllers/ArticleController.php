@@ -1,6 +1,6 @@
 <?php 
 function store_article(){            
-  // include "../../Database/MySQLHandler.php";
+try{
   $handler = new MySQLHandler("articles");
  $userhandler = new MySQLHandler("users");
   $user_name=$userhandler->search('name', $_SESSION['name']);
@@ -14,8 +14,17 @@ function store_article(){
         $handler->connect();
         $handler->save($newdata);
         header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
-      }else{
-        header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article=add&error=image type not supported, must be image/png or image/jpeg");      }
+      }else{ 
+        header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article=add&error=image type not supported, must be image/png or image/jpeg");     
+        throw new Exception("image wrong");
+       }
+}
+}catch(Exception $e){
+  $exc=$e->getMessage();
+    $date = date('d.m.Y h:i:s');
+    $log = $exc."   |  Date:  ".$date."\n";
+    echo 'error';
+    error_log("$log", 3, "../../assets/log-files/log.log");
 }
 }
 function show_articles(){
