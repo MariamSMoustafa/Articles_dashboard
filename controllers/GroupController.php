@@ -2,7 +2,7 @@
 function store_group(){            
             $handler = new MySQLHandler("groups");
             if(isset($_POST['submit'])){
-                if ($file_type == 'image/png' || $file_type == 'image/jpeg' ) {
+                if ($_FILES['icon']['type'] == 'image/png' || $_FILES['icon']['type']  == 'image/jpeg' ) {
                     move_uploaded_file($_FILES['icon']['tmp_name'], "../../assets/images/". $_FILES['icon']['name']);
              $newdata=array("id"=>null,"name"=>$_POST['name'] ,"icon"=>"../../assets/images/".$_FILES["icon"]['name'] , "description"=>$_POST['description']);
              $handler->connect();
