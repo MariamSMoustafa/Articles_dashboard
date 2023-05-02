@@ -1,4 +1,6 @@
-              
+       <?php
+       $groups=show_groups();
+              ?>
 <div class="container p-5">
 
 <h4 style="color:#584e46">Add User</h4>
@@ -23,11 +25,17 @@
             </div>
         
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Group</label>
-                <textarea name="group_id" type="group_id" class="form-control" id="exampleFormControlInput1" required></textarea>
+            <label for="exampleFormControlTextarea1" class="form-label">Group</label>
+                <select name='group_id'>
+                <?php foreach($groups as $row) 
+                    {
+                echo "<option value=".$row['id'].">".$row['name']."</option>";
+                }
+                ?>
+                </select>
                 
                         
-            </div> 
+            </div>
             <button style="background-color:#584e46; color:white; border:none" name="submit" class="btn btn-success">Submit</button>
         </form>
 
