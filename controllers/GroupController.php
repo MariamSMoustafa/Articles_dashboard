@@ -1,5 +1,6 @@
 <?php 
 function store_group(){            
+<<<<<<< Updated upstream
     try{        
         $handler = new MySQLHandler("groups");
         if(isset($_POST['submit'])){
@@ -112,4 +113,14 @@ function update_group(){
           echo 'error';
           error_log("$log", 3, "../../assets/log-files/log.log");
       }
+=======
+            $handler = new MySQLHandler("groups");
+
+            if(isset($_POST['submit'])){
+             $newdata=array("id"=>null,"name"=>$_POST['name'] ,"icon"=>$_POST['icon'], "description"=>$_POST['description']);
+             $handler->connect();
+             $handler->save($newdata);
+             header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");
+            }
+>>>>>>> Stashed changes
 }

@@ -34,8 +34,30 @@ require_once("../../vendor/autoload.php");
             <input name="search" type="text" placeholder="search here" class="form-control" aria-describedby="button-addon2">
             <button type="submit" name="save" style="color:white; font-weight:bold; Background-color:#584e46" class="btn mx-2 btn-outline-secondary" id="button-addon2">Search</button>
         </div>
+<<<<<<< Updated upstream
         <div class="form-group">
             <span class="error" style="color:red;"><?php echo $searchErr;?></span>
+=======
+        <div class="modal-body">
+          <form method="POST" action="<?php echo store_group()?>" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="name">Group Name:</label>
+              <input type="text" name="name" class="form-control" id="p_name" required>
+            </div>
+            <div class="form-group">
+              <label for="price">Icone:</label>
+              <input type="number" name="icon" class="form-control" id="p_price" required>
+            </div>
+            <div class="form-group">
+              <label for="qty">Description:</label>
+              <input type="text" name="description" class="form-control" id="p_desc" required>
+            </div>
+            <div class="form-group">
+              <button name="submit" class="btn btn-secondary" id="upload" style="height:40px">Add group</button>
+            </div>
+          </form>
+
+>>>>>>> Stashed changes
         </div>
     </form>
 <?php
