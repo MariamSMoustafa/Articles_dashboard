@@ -7,8 +7,33 @@
     $search_details='';
 
 
-    if(isset($_GET['id'])){
+    if(isset($_POST['save']))
+    {
+        if(!empty($_POST['search']))
+        {
+            $search = $_POST['search'];
+            $search_details = $handler->search_fun("id","title","$search");
+            if(empty($search_details)){
+                $searchErr = "There is no data like the one you entered!";
+                $search_details =show_articles();
+            }
+        }
+        else
+        {
+            $search_details =show_articles();
+            $searchErr = "Please enter what you want to search for!";
+        }
+    
+    }
+    else{
+        $search_details =show_articles();
+    }
+?>
+
+
+    <!-- if(isset($_GET['id'])){
         $userid=intval($_GET['id']);
+        //error_log($userid, 0);
         $search_details=$handler->search('user_id', $userid);
 
     }
@@ -42,7 +67,7 @@
     else{
         $search_details = show_articles();
     }
-    ?>
+    ?> -->
 
 <div class="container px-5" style="align:center; width:900px;">
 	<form class="form-horizontal" action="#" method="post">
