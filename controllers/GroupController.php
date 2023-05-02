@@ -2,11 +2,15 @@
 function store_group(){            
             $handler = new MySQLHandler("groups");
             if(isset($_POST['submit'])){
-                move_uploaded_file($_FILES['icon']['tmp_name'], "../../assets/images/". $_FILES['icon']['name']);
+                if ($file_type == 'image/png' || $file_type == 'image/jpeg' ) {
+                    move_uploaded_file($_FILES['icon']['tmp_name'], "../../assets/images/". $_FILES['icon']['name']);
              $newdata=array("id"=>null,"name"=>$_POST['name'] ,"icon"=>"../../assets/images/".$_FILES["icon"]['name'] , "description"=>$_POST['description']);
              $handler->connect();
              $handler->save($newdata);
              header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");
+                  }else{
+                    header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group=add&error=image type not supported, must be image/png or image/jpeg");      }
+                
             }
 }
 
@@ -91,16 +95,24 @@ function update_group(){
     $id=intval($_GET['group']);
     $res=$handler->get_record_by_id($id);
     if(isset($_POST['submit'])){
-        if(file_exists($_FILES['icon']['tmp_name']) || is_uploaded_file($_FILES['icon']['tmp_name'])) {        
-            move_uploaded_file($_FILES['icon']['tmp_name'], "../../assets/images/". $_FILES['icon']['name']);
-            $newimg=array( "icon"=>"../../assets/images/".$_FILES["icon"]['name'] );
-            $handler->connect();
-            $handler->update($newimg,$id);
+        if(file_exists($_FILES['icon']['tmp_name']) || is_uploaded_file($_FILES['icon']['tmp_name'])) {     
+            if($_FILES['icon']['type'] != 'image/png' && $_FILES['icon']['type'] != 'image/jpeg')   {
+                header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group=$id&error=image type not supported, must be image/png or image/jpeg");    
+        
+            }
+            else{
+                move_uploaded_file($_FILES['icon']['tmp_name'], "../../assets/images/". $_FILES['icon']['name']);
+                $newimg=array( "icon"=>"../../assets/images/".$_FILES["icon"]['name'] );
+                $handler->connect();
+                $handler->update($newimg,$id);
+               
+            }
         }
  
      $newdata=array("name"=>$_POST['name'],"description"=>$_POST['desc']);
      $handler->connect();
      $handler->update($newdata,$id);
+     if($_FILES['icon']['type'] == 'image/png' || $_FILES['icon']['type'] == 'image/jpeg')
      header("Location: http://localhost/Articles_dashboard/views/Home/index.php?group");
     }
 }

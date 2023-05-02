@@ -12,6 +12,11 @@
 <div class="container p-5">
 
 <h4 style="color:#584e46">Add Group</h4>
+<?php if(isset($_GET['error'])){ ?>
+        <div class="alert alert-danger w-100 p-2 my-3 text-center">
+            <?php echo $_GET['error']; ?>
+        </div> 
+    <?php } ?>
         <form method="POST" action="<?php echo store_group()?>" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="name" class="form-label">Name:</label>
@@ -19,7 +24,7 @@
             </div>
             <div class="mb-3">
               <label for="image" class="form-label">Icone:</label>
-      <input type="file" name="icon" class="form-control" id="exampleFormControlTextarea1" >
+      <input type="file" name="icon" class="form-control" id="exampleFormControlTextarea1" required >
     
     
                           </div>
