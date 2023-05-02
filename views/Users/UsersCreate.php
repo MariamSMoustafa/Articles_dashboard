@@ -1,4 +1,6 @@
-              
+       <?php
+       $groups=show_groups();
+              ?>
 <div class="container p-5">
 
 <h4 style="color:#584e46">Add User</h4>
@@ -19,13 +21,18 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">password</label>
-                <input name="password" type="password" class="form-control" id="exampleFormControlInput1" required></input>
+                <input name="password" type="password" class="form-control" id="password" required></input>
             </div>
-        
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Group</label>
-                <input name="group_id" type="group_id" class="form-control" id="exampleFormControlInput1" required></input>           
-            </div> 
+                    <select name='group_id'>
+                    <?php foreach($groups as $row) 
+                    {
+                        echo "<option value=".$row['id'].">".$row['name']."</option>";
+                    }
+                    ?>
+                    </select>          
+            </div>
             <button style="background-color:#584e46; color:white; border:none" name="submit" class="btn btn-success">Submit</button>
         </form>
 
