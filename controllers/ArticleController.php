@@ -25,13 +25,12 @@ try{
     echo 'error';
     error_log("$log", 3, "../../assets/log-files/log.log");
 }
-}
 
 
 function show_articles(){
     $handler = new MySQLHandler("articles");
     if(isset($_GET['id'])){
-      $result=filter();
+      $result=articles_filter();
     }else{
       $result = $handler->get_data(["id","title","summery","full-article","publishing-date","image","user_id"]);
     }
@@ -44,6 +43,7 @@ function show_articles(){
     }
     return $result;
 }
+
 
 
 function delete_article(){
@@ -108,5 +108,13 @@ function username($userid){
     $user_id = $userhandler->get_record_by_id($userid);
     $user_name=$user_id[0]["name"];
     return $user_name;
+}
+
+
+function articles_filter(){
+  $handler = new MySQLHandler("articles");
+  $user_id=intval($_GET['id']);
+  $result=$handler->search('user_id', $user_id);
+  return $result;
 }
 
