@@ -13,31 +13,17 @@ require_once("../../vendor/autoload.php");
        <link rel="stylesheet" href="../../assets/css/style.css"/>
         <!DOCTYPE html>
 <html>
-<head>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-  <title>Admin</title>
-</head>
-<body >
-
-
-
-<!-- <div class="container-fluid " style="display: flex;
-  justify-content: center;
-  align-items: center; margin-left:-200px">
-  <div class="d-flex flex-column">
-    <div class="col-md-6">
-      <div id="pieChart" style="height: 360px; width: 100%;">
-      </div>
-    </div> -->
-
-  </body>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <title>Admin</title>
+    </head>
 
 </html>
-     <?php
+
+<?php
 if(isset($_GET["group"])&&!isset($_GET["delete"])){
-    if($_GET["group"]==intval($_GET["group"])){
-        
+    if($_GET["group"]==intval($_GET["group"])){ 
         require_once("../Groups/Groupedit.php");
          }
          elseif(($_GET["group"])=='delete'){
@@ -53,7 +39,7 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
          }
      }
 
-     elseif(isset($_GET["user"])&&!isset($_GET["delete"])){
+    elseif(isset($_GET["user"])&&!isset($_GET["delete"])){
         if($_GET["user"]==intval($_GET["user"])) {
             if($_SESSION['group']=='Admins'){
             
@@ -66,8 +52,6 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
             require_once("../Users/UsersDelete.php");}
             else{echo "<div class='alert alert-success'>you don't have the permission to delete user!</div>";}
         }
-       
-
         else if(($_GET["user"])=='add'){
             if($_SESSION['group']=='Admins'){
             require_once("../Users/UsersCreate.php");}
@@ -94,10 +78,8 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
              else{
                  require_once("../Articles/ArticlesView.php"); 
              }
-         }
-    // elseif(isset($_GET["login"])) {
-    //     require_once("views/Login/Login.php");
-    // }
+        }
+
     else{
         echo "<body >";
         echo "<d class='container-fluid' style='display: flex;  justify-content: center;  margin-rigt:200px;'";
@@ -107,7 +89,7 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
         echo "</div>";
         echo "</div>";
 
-    }
+       }
 ?> 
   
    
