@@ -41,11 +41,9 @@
 		</div>
     </form>
 
-
 <?php
     require_once("../../vendor/autoload.php");
     $handler = new MySQLHandler("articles");
-
 
         echo "<table align=center border=1px style=width:600px; line-height:40px;>";
         echo "<tr> 
@@ -89,9 +87,11 @@
 
         echo "</table>";
     }
+    echo "</div>";
 
         echo "<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?article=add name='add' type='button' class='btn btn-secondary'>Add Article</a>";
     ?>
-</div>
+
+<br><br>
    
 </center>
