@@ -9,41 +9,37 @@
   <title>Admin</title>
 </head>
 <body >
+<div class="container p-5">
+
+<?php if(isset($_GET['error'])){ ?>
+        <div class="alert alert-danger w-100 p-2 my-3 text-center">
+            <?php echo $_GET['error']; ?>
+        </div> 
+    <?php } ?>
+    
+<h4 style="color:#584e46">Add Article</h4>
     <form method="POST" action="<?php echo store_article()?>" enctype="multipart/form-data">
     
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title</label>
-            <input name="title" type="text" class="form-control" id="exampleFormControlInput1">
+            <input name="title" type="text" class="form-control" id="exampleFormControlInput1" required>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Summery</label>
-            <textarea name="summery" type="text" class="form-control" id="exampleFormControlInput1"></textarea>
+            <textarea name="summery" type="text" class="form-control" id="exampleFormControlInput1" required></textarea>
         </div>
        
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Full Article</label>
-            <textarea name="full-article" type="text" class="form-control" id="exampleFormControlInput1"></textarea>
+            <textarea name="full-article" type="text" class="form-control" id="exampleFormControlInput1" required></textarea>
         </div>
-        <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">User</label>
-                <textarea name="user_id" type="user_id" class="form-control" id="exampleFormControlInput1"></textarea>     
-                        
-            </div>
-     
-        <!-- <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Post Creator</label>
-            <select name="post_creator" class="form-control">
-             
-                    <option value=""></option>
-             
-            </select>
-        </div> -->
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Image</label>
-            <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" >
+            <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" required >
         </div>
-        <button name="submit" class="btn btn-success">Submit</button>
+        <button style="background-color:#584e46; color:white; border:none" name="submit" class="btn btn-success">Submit</button>
     </form>
+</div>
 
     <script type="text/javascript" src="../../assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>

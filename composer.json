@@ -3,7 +3,7 @@
 
     },
     "autoload":{
-        "classmap":["Database"],
+        "classmap":["Model"],
         "files":["./config/dbconnect.php"]
     }
 

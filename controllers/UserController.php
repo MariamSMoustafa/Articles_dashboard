@@ -1,4 +1,25 @@
 <?php 
+function show_users(){
+  $handler = new MySQLHandler("users");
+  if(isset($_GET['id'])){
+  $result=filter();
+}else{
+  $result = $handler->get_data(["id","name","email","number","group_id"]);
+}
+  if (!$handler->connect())
+  {
+
+       die('Could not connect: ');
+
+  }
+  return $result;
+}
+function filter(){
+  $handler = new MySQLHandler("users");
+  $groupid=intval($_GET['id']);
+$result=$handler->search('group_id', $groupid);
+return $result;
+}
 function store_user(){            
             // include "../../Database/MySQLHandler.php";
             $handler = new MySQLHandler("users");
