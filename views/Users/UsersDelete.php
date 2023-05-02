@@ -1,17 +1,17 @@
 <center>
 
-      
- <div class="container p-5 w-25 card" style="color:white">
- 
- <h4>Delete User </h4>
- 
- <?php if(isset($_GET['error'])){ ?>
-        <div class="alert alert-danger w-100 p-2 my-3 text-center">
+<?php if(isset($_GET['error'])){ ?>
+        <div class="alert alert-danger w-75 p-2 my-3 text-center">
             <?php echo $_GET['error']; ?>
         </div> 
     <?php } 
     ?>  
-
+  
+ <div class="container p-5 w-25 card" style="color:white">
+ 
+ <h4>Delete User </h4>
+ 
+ 
  <form id="delete-Items" enctype='multipart/form-data' action="<?php echo delete_user()?>" method="POST">
  <p>Are you sure you want to delete this record?</p>
     

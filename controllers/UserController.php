@@ -33,18 +33,19 @@ function delete_user(){
     
     $handler = new MySQLHandler("users");
     $articlehandler = new MySQLHandler("articles");
-    $id=intval($_GET['id']);
-      $user_has_article=$articlehandler->search('user_id', $id);
-      if ($user_has_article){
-        header("Location: http://localhost/Articles_dashboard/views/Home/index.php?user=delete&error=can't delete this user ");
-      }
-      else {
       if(isset($_POST['submit'])) {
-          $handler->connect();
+        $id=intval($_GET['id']);
+        $user_has_article=$articlehandler->search('user_id', $id);
+        if ($user_has_article){
+          header("Location: http://localhost/Articles_dashboard/views/Home/index.php?user=delete&error=can't delete this user ");
+        }
+        else {     
+        $handler->connect();
           $handler->delete($id);
           header("Location: http://localhost/Articles_dashboard/views/Home/index.php?user");
+
       }
-  }
+    }
 }
 
 function edit_user(){    
