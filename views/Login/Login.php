@@ -41,7 +41,7 @@
 </html>
 <?php 
 }  else {
-    header("Location: views/Home/index.php");
+    header("Location: ../articles_dashboard/views/Home/index.php");
     exit();
 }
 ?>
