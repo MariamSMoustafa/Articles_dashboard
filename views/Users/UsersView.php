@@ -1,6 +1,5 @@
-<center>
+
 <?php
-require_once("../../vendor/autoload.php");
 $handler = new MySQLHandler("users");
 $searchErr = '';
 $search_details='';
@@ -29,8 +28,8 @@ else{
     $search_details =show_users();
 }
 ?>
-
-<div class="container px-5" style="align:center; width:720px; ">
+<center>
+<div class="container px-5" style="align:center;width:60%;">
 	<form class="form-horizontal" action="#" method="post">
         <div class="input-group mb-3">
             <input name="search" type="text" placeholder="search here" class="form-control" aria-describedby="button-addon2">
@@ -43,48 +42,59 @@ else{
         </div>
     </form>
 
-    <?php
-        require_once("../../vendor/autoload.php");
-        echo "<table align=center border=1px style=width:600px; line-height:40px;>";
-        echo "<tr> 
-        <th colspan=6><h2>Users</h2></th> 
-        </tr><tr>";
-        echo "<th>id</th>";
-        echo "<th>name</th>";
-        echo "<th>email</th>";
-        echo "<th>number</th>";
-        echo "<th>group </th>";
+    <div class="mb-2" style="overflow-y:auto;height:380px" >
+        <table border="1px" class="px-5 " >
+         <thead>
+		 <tr>
+                <th colspan=6>
+                    <h2>Users Record</h2>
+                </th>
+            </tr>
+            <tr>
+        <th>id</th>
+        <th>name</th>
+       <th>email</th>
+        <th>number</th>
+        <th>group </th>
         
-
+        
+<?php
         if($_SESSION['group']=='Admins') {
             echo "<th>Action</th></thead></tr>";
         }
     
         if($search_details) {
-            foreach($search_details as $row) {
-                echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
-                echo "<td><a style='color:#584e46; font-weight:bold'  href='" . $_SERVER["PHP_SELF"] . "?article=filter&". "id=" . $row["id"] ."' >" . $row['name'] . "</a></td>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['number'] . "</td>";
-                echo "<td>" . groupname($row['group_id']) . "</td>";
-                if($_SESSION['group']=='Admins') {
-                    echo
-                    "<td>
-                    <a  style='color:#584e46; font-weight:bold' href='". $_SERVER["PHP_SELF"]. "?user=". $row["id"]." '> Edit </a><br>
-                    <a  style='color:#584e46; font-weight:bold' href=" . $_SERVER["PHP_SELF"] ."?user=delete&" ."id=".  $row["id"]  ." name='delete' type='submit'
-                
-                    > Delete </a>  
-                
-                     </td> ";
-                }
-                echo "</tr>";
-            }
+            foreach($search_details as $row) {?>
+            </tr>
+		 </thead>
+         <tbody>
+                <tr>
+                <td><?php echo $row['id'] ?> </td>
+                <td><a style='color:#584e46; font-weight:bold'
+                        href=<?php echo $_SERVER['PHP_SELF']?>?article=filter&id=<?php echo $row['id']?>>
+                        <?php echo $row['name'] ?> </a></td>
+                        <td> <?php echo $row['email'] ?></td>
+                        <td> <?php echo $row['number'] ?></td>
+                        <td> <?php echo groupname($row['group_id'])  ?></td>
+<?php
+                if($_SESSION['group']=='Admins') { ?>
+                     <td>
+                    <a style='color:#584e46; font-weight:bold'
+                        href=<?php echo $_SERVER["PHP_SELF"]?>?user=<?php echo $row["id"] ?>> Edit </a><br>
+                    <a style='color:#584e46; font-weight:bold'
+                        href=<?php echo $_SERVER["PHP_SELF"] ?>?user=delete&id=<?php echo $row["id"]?> name='delete'
+                        type='submit'> Delete </a>
+                </td>
+                <?php } ?>
+            </tr>
+           <?php }
 
-            echo "</table>";
+            
         }
     ?>
-
+</tbody>
+        </table></div>
+    
         <?php
         if($_SESSION['group']=='Admins')
             echo"<a style='color:white; font-weight:bold; Background-color:#584e46' href=" . $_SERVER["PHP_SELF"] ."?user=add name='add' type='button' class='btn btn-secondary'>Add User</a>"
