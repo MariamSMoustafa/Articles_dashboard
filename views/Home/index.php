@@ -22,6 +22,13 @@ require_once("../../vendor/autoload.php");
 </html>
 
 <?php
+ $currentpage = $_SERVER['REQUEST_URI'];
+ if($_SESSION['group'] !='Admins' && $_SESSION['group']!='Editors'){
+        
+    if(isset($_GET["article"])){
+        header('Location: ../Error/404.php');
+    }
+   }
 if(isset($_GET["group"])&&!isset($_GET["delete"])){
     if($_GET["group"]==intval($_GET["group"])){ 
         require_once("../Groups/Groupedit.php");
@@ -79,8 +86,7 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
                  require_once("../Articles/ArticlesView.php"); 
              }
         }
-
-    else{
+        elseif($currentpage=="/articles_dashboard/views/Home/index.php"  ){
        
         echo "<div class='container'>";
         echo "<div class='row my-2'>";
@@ -100,6 +106,10 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
         echo "</div>";
         echo "</div>";
         echo "</div>";
+       }
+       
+       else{
+       header('Location: ../../Error/404.php');
        }
 ?> 
 
