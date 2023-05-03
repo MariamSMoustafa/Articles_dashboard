@@ -77,10 +77,6 @@
 	    error_log("$log", 3, "../../assets/log-files/log.log");
 	    }
 	}
-	    
-	
-
-	
 
 	function edit_group(){  
 	    $handler = new MySQLHandler("groups"); 
@@ -90,13 +86,9 @@
 	}
 	
 
-	
-
 	function update_group(){
 	    try{
 	    $handler = new MySQLHandler("groups");
-	
-
 	    $id=intval($_GET['group']);
 	    if(isset($_POST['submit'])){
 	        if(file_exists($_FILES['icon']['tmp_name']) || is_uploaded_file($_FILES['icon']['tmp_name'])) {     

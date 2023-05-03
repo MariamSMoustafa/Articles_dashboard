@@ -23,8 +23,8 @@ require_once("../../vendor/autoload.php");
 
 <?php
  $currentpage = $_SERVER['REQUEST_URI'];
- $url_components = parse_url($currentpage);
-parse_str($url_components['query'], $params);
+//  $url_components = parse_url($currentpage);
+//  parse_str($url_components['query'], $params);
 
  if($_SESSION['group'] !='Admins' && $_SESSION['group']!='Editors'){
         
