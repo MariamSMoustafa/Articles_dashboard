@@ -69,7 +69,7 @@
 	            foreach($search_details as $row) {
 	?>
 
-            <tr></
+                </tr>
 		 </thead>
                <tbody>
 			   <td><?php echo $row['id'] ?> </td>
