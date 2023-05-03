@@ -23,10 +23,13 @@ require_once("../../vendor/autoload.php");
 
 <?php
  $currentpage = $_SERVER['REQUEST_URI'];
+ $url_components = parse_url($currentpage);
+parse_str($url_components['query'], $params);
+
  if($_SESSION['group'] !='Admins' && $_SESSION['group']!='Editors'){
         
     if(isset($_GET["article"])){
-        header('Location: ../Error/404.php');
+        header('Location: /articles_dashboard/views/Home/index.php');
     }
    }
 if(isset($_GET["group"])&&!isset($_GET["delete"])){
@@ -109,7 +112,9 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
        }
        
        else{
-       header('Location: ../../Error/404.php');
+        if(isset($params)&&!isset($params['group'])|| !isset($params['user'])|| !isset($params['article'])){
+       header('Location: /articles_dashboard/views/Error/404.php');}
+       header('Location: /articles_dashboard/views/Error/404.php');
        }
 ?> 
 
