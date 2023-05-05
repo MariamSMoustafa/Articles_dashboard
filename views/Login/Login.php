@@ -12,11 +12,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper container">
-<div class="container d-flex flex-column justify-content-end w-50 p-1">
-    <div class="card p-5 bg-light m-5">
-    <div class="card-header my-3 bg-secondary text-white"><h2>Welcome</h2></div>
+<body class="hold-transition sidebar-mini layout-fixed" style="background-image: url(https://images.unsplash.com/photo-1642030629354-9a9b4e009551?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1188&q=80); 
+   background-size: cover;
+   background-position: center;
+   backdrop-filter: blur(3px);">
+<div class="wrapper container" >
+<div class="container d-flex flex-column justify-content-end w-50 p-1" >
+    <div class="card p-5 m-5" style="background-color: #E4DCCF">
+    <div class="card-header my-3  text-white" style="background-color: #3B3131;"><h2>Welcome</h2></div>
     <?php if(isset($_GET['error'])){ ?>
         <div class="alert alert-danger w-100 p-2 my-3 text-center">
             <?php echo $_GET['error']; ?>
@@ -24,14 +27,14 @@
     <?php } ?>
     <form action="controllers/login.php" method="post">
         <div class="mb-3">
-            <label class="form-label">Username</label>
+            <label class="form-label" style="color: #3B3131;">Username</label>
             <input type="text" class="form-control" name="uname" placeholder="username">
         </div>
         <div class="mb-3">
             <label class="form-label">Password</label>
             <input type="password" class="form-control" name="password" placeholder="password">
         </div>
-        <button type="submit" class="btn btn-primary">LOGIN</button>
+        <button type="submit" class="btn btn-primary" style="background-color: #3B3131;">LOGIN</button>
     </form>
     </div>
 </div>
