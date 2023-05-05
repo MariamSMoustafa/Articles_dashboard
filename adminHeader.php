@@ -24,7 +24,8 @@
         } else {
             ?>
             <a href="../../controllers/logout.php" style="text-decoration:none;">
-                    <i class="fa fa-sign-in mr-5" style="font-size:30px; color:#fff;" aria-hidden="true"></i>
+                    <i class=" " style="font-size:20px ;font-family: Helvetica; color:#fff;" ><?php echo  $_SESSION['name'];?></i>
+                    <i class="fa fa-sign-in mr-5" style="font-size:26px; color:#fff;" aria-hidden="true"></i>
             </a>
 
             <?php
