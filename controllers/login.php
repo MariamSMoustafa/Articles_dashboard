@@ -26,22 +26,13 @@ try {
                     throw new Exception("No such user in database");
                 }else{
                     $id = $user[0]['id'];
-                    // $last_login=$user[0]['last_login'];
-                    // date_default_timezone_set('Africa/Cairo');
-                // $values = [
-                //     "last_login" => date('Y-m-d h:i:sa',time())
-                //   ];
-                //  $users_db->update($values,$id); 
                     $groups_db= new MySQLHandler('groups');
                 $group=$groups_db->get_record_by_id($user[0]['group_id']);
-                    // $_SESSION['user_name']=$user[0]['user_name'];
                     $_SESSION['name']=$user[0]['name'];
                     $_SESSION['password']=$user[0]['password'];
                     $_SESSION['email']=$user[0]['email'];
                     $_SESSION['number']=$user[0]['number'];
                     $_SESSION['group']=$group[0]['name'];
-                    // $_SESSION['subscription_date']=$user[0]['subscription_date'];
-                    // $_SESSION['last_login']=$last_login;
                     header("Location: ../views/Home/index.php");
                     exit();
             }
