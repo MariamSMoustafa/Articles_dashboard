@@ -6,8 +6,55 @@
     font-size: 18px;
 }
 
+body{
+   background-image: url(https://images.unsplash.com/photo-1642030629354-9a9b4e009551?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1188&q=80); 
+   background-size: cover;
+   background-position: center;
+   backdrop-filter: blur(3px);
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color:  rgba(73, 30, 2, 0.4);
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.5) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.5) 75%,
+    transparent 75%,
+    transparent
+  );
+  animation: glitter 1s infinite;
+
+  border-radius: 7px;
+}
+@keyframes glitter {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #584e46; 
+}
+
 .user-cart span{
-    background-color:red; 
+    background-color:#3B3131; 
     padding-right:3px; 
     padding-left:3px;  
     border-radius:10px; 
@@ -28,16 +75,16 @@
 
   /* The sidebar menu */
   .sidebar {
-      height: 100%; /* 100% Full-height */
-      width: 0; /* 0 width - change this with JavaScript */
-      position: fixed; /* Stay in place */
-      z-index: 1; /* Stay on top */
+      height: 100%; 
+      width: 0; 
+      position: fixed; 
+      z-index: 1; 
       top: 0;
       left: 0;
-      background-color: #3B3131; /* Black*/
-      overflow-x: hidden; /* Disable horizontal scroll */
-      padding-top: 60px; /* Place content 60px from the top */
-      transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+      background-color: #3B3131; 
+      overflow-x: hidden; 
+      padding-top: 60px; 
+      transition: 0.5s; 
     }
     
     /* The sidebar links */
@@ -56,12 +103,10 @@
           color: #fff;
       }
 
-    /* When you mouse over the navigation links, change their color */
     .sidebar a:hover {
       background-color: #584e46;
     }
     
-    /* Position and style the close button (top right corner) */
     .sidebar .closebtn {
       position: absolute;
       top: 0;
@@ -70,7 +115,6 @@
       margin-left: 50px;
     }
     
-    /* The button used to open the sidebar */
     .openbtn {
       font-size: 20px;
       cursor: pointer;
@@ -84,13 +128,11 @@
       color: #ECDAC9;
     }
     
-    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
     #main {
-      transition: margin-left .5s; /* If you want a transition effect */
+      transition: margin-left .5s; 
       padding: 20px;
     }
     
-    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
     @media screen and (max-height: 450px) {
       .sidebar {padding-top: 15px;}
       .sidebar a {font-size: 18px;}
@@ -152,11 +194,9 @@
 */
 .card-account{
   background-color: #ECDAC9;
-  /* just in case there no content*/
   padding: 20px 25px 30px;
   margin: 0 auto 25px;
   margin-top: 40px;
-  /* shadows and rounded borders */
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
@@ -318,4 +358,11 @@
 .footer-hover:hover{
   color: #ECDAC9;
   text-decoration: none;
+}
+
+
+#barChart{
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 500px;
+  height: 500px;
 }

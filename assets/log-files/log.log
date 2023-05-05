@@ -5,6 +5,27 @@ Connection failed   |  Date:  30.04.2023 08:59:12
 Unknown database 'php-project1'   |  Date:  30.04.2023 09:01:54
 Unknown database 'php-project1'   |  Date:  30.04.2023 09:02:02
 Unknown database 'php-project1'   |  Date:  30.04.2023 09:02:21
+
 No such user in database   |  Date:  02.05.2023 01:52:14
 article create failed because of image wrong format   |  Date:  02.05.2023 03:02:28
 article edit failed because of image wrong format   |  Date:  02.05.2023 03:11:23
+article edit failed because of image wrong format   |  Date:  02.05.2023 03:20:43
+article edit failed because of image wrong format   |  Date:  02.05.2023 03:22:58
+article edit failed because of image wrong format   |  Date:  02.05.2023 03:23:36
+article edit failed because of image wrong format   |  Date:  02.05.2023 03:28:40
+article edit failed because of image wrong format   |  Date:  02.05.2023 03:35:02
+article edit failed because of image wrong format   |  Date:  02.05.2023 04:05:02
+article edit failed because of image wrong format   |  Date:  02.05.2023 04:05:21
+article edit failed because of image wrong format   |  Date:  02.05.2023 04:13:54
+group create failed because of image wrong format   |  Date:  02.05.2023 04:03:04
+group edit failed because of image wrong format   |  Date:  02.05.2023 04:04:55
+this group contains users please delete users first   |  Date:  02.05.2023 04:20:59
+this group contains users please delete users first   |  Date:  02.05.2023 04:21:29
+article create failed because of image wrong format   |  Date:  02.05.2023 12:44:49
+article edit failed because of image wrong format   |  Date:  02.05.2023 12:47:36
+can't delete this user because it has article   |  Date:  02.05.2023 01:30:29
+group create failed because of image wrong format   |  Date:  02.05.2023 10:49:18
+group create failed because of image wrong format   |  Date:  03.05.2023 12:16:09
+group create failed because of image wrong format   |  Date:  03.05.2023 12:17:22
+group create failed because of image wrong format   |  Date:  03.05.2023 12:18:19
+group edit failed because of image wrong format   |  Date:  03.05.2023 11:29:37
