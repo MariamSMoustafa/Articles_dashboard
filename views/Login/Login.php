@@ -18,7 +18,7 @@
    backdrop-filter: blur(3px);">
 <div class="wrapper container" >
 <div class="container d-flex flex-column justify-content-end w-50 p-1" >
-    <div class="card p-5 m-5" style="background-color: #E4DCCF">
+    <div class="card p-5 m-5" style="background-color: #E4DCCF ;border-radius: 25px">
     <div class="card-header my-3  text-white" style="background-color: #3B3131;"><h2>Welcome</h2></div>
     <?php if(isset($_GET['error'])){ ?>
         <div class="alert alert-danger w-100 p-2 my-3 text-center">
