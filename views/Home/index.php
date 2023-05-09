@@ -89,7 +89,7 @@ if(isset($_GET["group"])&&!isset($_GET["delete"])){
                  require_once("../Articles/ArticlesView.php"); 
              }
         }
-        elseif($currentpage=="/articles_dashboard/views/Home/index.php"  ){
+        elseif($currentpage=="/articles_dashboard/views/Home/index.php" ||$currentpage=="/Articles_dashboard/views/Home/index.php"  ){
        
         echo "<div class='container'>";
         echo "<div class='row my-2'>";
