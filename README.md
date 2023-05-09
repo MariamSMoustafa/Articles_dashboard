@@ -85,7 +85,10 @@ composer dump-autoload
 
 ### [![Website Demo Video](https://github.com/MariamSMoustafa/Articles_dashboard/blob/dev/assets/images/1.png)](#) 
 
-
+<pre>
+[git clone https://github.com/MariamSMoustafa/Articles_dashboard.git
+](https://drive.google.com/file/d/1FFfAWn6u1UVQkCvir2j9TA2oPTQCTrh0/view?usp=sharing)<
+/pre>
 
 
 ## Authors
@@ -94,7 +97,7 @@ composer dump-autoload
 
 - [Mariam Saad](https://github.com/MariamSMoustafa)
 
-- [Ahmed abdelrhem](https://github.com/ahmedabdelrahim123)
+- [Ahmed Abdelrhim](https://github.com/ahmedabdelrahim123)
 
 - [Esraa Elsayed](https://github.com/Esraamohamed0)
 
