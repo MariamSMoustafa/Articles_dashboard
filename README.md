@@ -83,7 +83,7 @@ composer dump-autoload
 
 ## Video Demo 
 
-### [Website Demo Video](https://drive.google.com/file/d/1FFfAWn6u1UVQkCvir2j9TA2oPTQCTrh0/view?usp=sharing)]
+### [Website Demo Video](https://drive.google.com/file/d/1FFfAWn6u1UVQkCvir2j9TA2oPTQCTrh0/view?usp=sharing)
 
 ## Authors
 
