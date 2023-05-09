@@ -65,7 +65,9 @@
 	            foreach($search_details[0] as $key=>$val) {
 	            echo "<th>".$key."</th>";
 	            }
-	            echo "<th>Action</th></thead></tr>";
+if($_SESSION['group']=='Admins') {
+    echo "<th>Action</th></thead></tr>";
+}
 	            foreach($search_details as $row) {
 	?>
 
@@ -80,6 +82,8 @@
                     <image class='mt-2 w-25' src=<?php echo $row['icon']?>>
                 </td>
                 <td> <?php echo $row['description'] ?></td>
+                
+                <?php if($_SESSION['group']=='Admins') { ?>
                 <td>
                     <a style='color:#584e46; font-weight:bold'
                         href=<?php echo $_SERVER["PHP_SELF"]?>?group=<?php echo $row["id"] ?>> Edit </a><br>
@@ -87,6 +91,7 @@
                         href=<?php echo $_SERVER["PHP_SELF"] ?>?group=delete&id=<?php echo $row["id"]?> name='delete'
                         type='submit'> Delete </a>
                 </td>
+                <?php } ?>
             </tr>
             <?php } ?>
 			   </tbody>

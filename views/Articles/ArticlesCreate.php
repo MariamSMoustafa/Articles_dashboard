@@ -35,17 +35,17 @@
 		
          </head>
         <body >
-            <center>
-            <div class="container card " style="width:48%;">
-
-            <?php if(isset($_GET['error'])){ ?>
+        <?php if(isset($_GET['error'])){ ?>
                     <div class="alert alert-danger w-100 p-2 my-3 text-center">
                         <?php echo $_GET['error']; ?>
                     </div> 
             <?php } ?>
+            <center>
+
+           
                 
             <h4 style="color:#3B3131">Add Article</h4>
-                <form method="POST" action="<?php echo store_article()?>" enctype="multipart/form-data">
+                <form method="POST" action="<?php echo store_article()?>" enctype="multipart/form-data" class="container card " style="width:48%;">
                 
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Title</label>
@@ -64,8 +64,9 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Image</label>
                         <input type="file" name="image" class="form-control" id="exampleFormControlTextarea1" required >
                     </div>
-                    <button class="button-33"  name="submit" class="btn btn-success" id="upload" style="height:40px">Add user</button>                </form>
-            </div>
+                    <button class=" button-33 "  name="submit" class="btn btn-success d-flex justify-content-center ml-50" id="upload" style="height:40px;width:150px ;  margin-left:230px">Add article</button>  
+                </form>
+    
             </center>
         </body>      
     </html>

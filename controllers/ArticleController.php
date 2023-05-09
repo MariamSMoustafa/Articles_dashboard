@@ -14,7 +14,7 @@ function store_article(){
                 $handler->save($newdata);
                 header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article");
             } else {
-                header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article=add&error=image type not supported, must be image/png or image/jpeg");
+                header("Location: http://localhost/Articles_dashboard/views/Home/index.php?article&error=image type not supported, must be image/png or image/jpeg");
                 throw new Exception("article create failed because of image wrong format");
             }
         }

@@ -36,16 +36,17 @@
 	          </style>
         </head>
         <body >
-          <center>
-           <div class="container card " style="width:48%;">
-            <?php if(isset($_GET['error'])){ ?>
+        <?php if(isset($_GET['error'])){ ?>
                     <div class="alert alert-danger w-100 p-2 my-3 text-center">
                         <?php echo $_GET['error']; ?>
                     </div> 
                 <?php } ?>
+          <center>
+           
+          
             <h4 style="color:#3B3131">Edit Article Detail</h4>
             <?php $res=edit_article() ?>
-            <form id="update-Items" enctype='multipart/form-data' action="<?php echo update_article()?>" method="POST">
+            <form id="update-Items" enctype='multipart/form-data' action="<?php echo update_article()?>" method="POST" class="container card " style="width:48%;">
                 <div class="form-group">
                   <label for="title">Title:</label>
                   <input name="title" type="text" class="form-control" id="g_title" value="<?=$res[0]['title']?>">
@@ -65,7 +66,6 @@
                 </div>
                 <button class="button-33" name="submit" type="submit" class="btn btn-primary">Update</button>
             </form>
-            </div>
             </center>
     </body>
 

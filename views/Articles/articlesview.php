@@ -90,8 +90,7 @@
 
             
         <td>
-        <a style='color:#584e46; font-weight:bold'
-                        href=<?php echo $_SERVER["PHP_SELF"]?>?article=<?php echo $row["id"] ?>> Edit </a><br>
+                       
                     <a style='color:#584e46; font-weight:bold'
                         href=<?php echo $_SERVER["PHP_SELF"] ?>?article=delete&id=<?php echo $row["id"]?> name='delete'
                         type='submit'> Delete </a>
