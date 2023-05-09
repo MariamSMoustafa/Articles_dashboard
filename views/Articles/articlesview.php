@@ -80,8 +80,8 @@
             <tr>
 
             <td><?php echo $row['id'] ?> </td>
-            <td><?php echo $row['summery'] ?> </td>
             <td><?php echo $row['title'] ?> </td>
+            <td><?php echo $row['summery'] ?> </td>
             <td><?php echo $row['full-article'] ?> </td>
             <td><?php echo $row['publishing-date'] ?> </td>
        
