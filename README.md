@@ -1,6 +1,10 @@
-<div style="display:flex;text-align: center; width:100%">
-</div>
-# Introduction
+# ARTICLES SYSTEM
+<p align="center" style="margin-top:6%;margin-bottom:6%;">
+  <img  src="https://media.giphy.com/media/wgFzLCCoo4ofVYaxvL/giphy.gif" />
+</p>
+
+
+## Introduction
 Our website built using PHP that uses role-based access control to provide different levels of access . The site has three main roles:admins ,editors and users, each with different permissions for CRUD on Articles,groups and users. The site is designed to be secure,efficient,flexible and scalable.
 ## Installation & Project Run
 <pre>
@@ -64,6 +68,23 @@ composer dump-autoload
  Admin ----> Full access <br>
  Editor ---> Full access on articles - View Groups and users but has no access on cruds <br>
  User ---->View Groups and users but has no access on cruds
+## ScreenShoots Samples
+![image](https://github.com/MariamSMoustafa/Articles_dashboard/blob/dev/assets/images/0.png)
+
+![image](https://github.com/MariamSMoustafa/Articles_dashboard/blob/dev/assets/images/1.png)
+
+![image](https://github.com/MariamSMoustafa/Articles_dashboard/blob/dev/assets/images/4.png)
+
+![image](https://github.com/MariamSMoustafa/Articles_dashboard/blob/dev/assets/images/2.png)
+
+![image](https://github.com/MariamSMoustafa/Articles_dashboard/blob/dev/assets/images/3.png)
+
+
+
+## Video Demo 
+
+### [![Website Demo Video](https://github.com/MariamSMoustafa/Articles_dashboard/blob/dev/assets/images/1.png)](#) 
+
 
 
 
