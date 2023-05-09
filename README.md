@@ -85,12 +85,6 @@ composer dump-autoload
 
 ### [![Website Demo Video](https://drive.google.com/file/d/1FFfAWn6u1UVQkCvir2j9TA2oPTQCTrh0/view?usp=sharing)](#) 
 
-<pre>
-[git clone https://github.com/MariamSMoustafa/Articles_dashboard.git
-](https://drive.google.com/file/d/1FFfAWn6u1UVQkCvir2j9TA2oPTQCTrh0/view?usp=sharing)<
-/pre>
-
-
 ## Authors
 
 - [Sara Hossam](https://github.com/Sarahussam77)
