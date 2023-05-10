@@ -75,7 +75,7 @@ composer dump-autoload
 
 ![image](https://github.com/MariamSMoustafa/Articles_dashboard/blob/dev/assets/images/4.png)
 
-![image](https://github.com/MariamSMoustafa/Articles_dashboard/blob/dev/assets/images/2.png)
+
 
 ![image](https://github.com/MariamSMoustafa/Articles_dashboard/blob/dev/assets/images/3.png)
 
